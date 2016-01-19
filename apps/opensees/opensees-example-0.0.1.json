@@ -1,0 +1,91 @@
+{
+    "name": "opensees-example",
+    "version": "0.0.1",
+    "executionSystem": "designsafe.exec.example",
+    "executionType": "HPC",
+    "defaultQueue": "development",
+    "defaultMaxRunTime": "01:59:00",
+    "defaultMemoryPerNode": 1,
+    "defaultNodeCount": 1,
+    "defaultProcessorsPerNode": 1,
+    "parallelism": "SERIAL",
+    "deploymentSystem": "designsafe.storage.default",
+    "deploymentPath": "example/applications/opensees-example-0.0.1/app",
+    "templatePath": "wrapper.sh",
+    "testPath": "test/test.sh",
+    "available": true,
+    "checkpointable": false,
+    "inputs": [
+        {
+            "id": "input_script",
+            "details": {
+                "argument": null,
+                "description": "The tcl script to process",
+                "label": "Input script",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "semantics": {
+                "fileTypes": [
+                    "tcl-0"
+                ],
+                "maxCardinality": 1,
+                "minCardinality": 1,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/mime/text/Tcl"
+                ]
+            },
+            "value": {
+                "default": "agave://designsafe.storage.default/example/applications/opensees-example-0.0.1/app/test/Truss.tcl",
+                "enquote": false,
+                "order": 0,
+                "required": true,
+                "validator": "([^\\s]+(\\.(?i)(tcl))$)",
+                "visible": true
+            }
+        },
+        {
+            "id": "supporting_files",
+            "details": {
+                "argument": null,
+                "description": "Additional/supporting files that may be loaded or referenced by the input TCL script.",
+                "label": "Additional files",
+                "repeatArgument": false,
+                "showArgument": false
+            },
+            "semantics": {
+                "fileTypes": [
+                    "raw-0"
+                ],
+                "maxCardinality": -1,
+                "minCardinality": 0,
+                "ontology": [
+                    "http://sswapmeet.sswap.info/mime/Textual"
+                ]
+            },
+            "value": {
+                "default": [],
+                "enquote": false,
+                "order": 0,
+                "required": false,
+                "validator": "",
+                "visible": true
+            }
+        }
+    ],
+    "parameters": [],
+    "outputs": [],
+    "label": "OpenSees Example",
+    "shortDescription": "OpenSees is a software framework for simulating the seismic response of structural and geotechnical systems.",
+    "longDescription": "The Open System for Earthquake Engineering Simulation (OpenSees) is a software framework for simulating the seismic response of structural and geotechnical systems. OpenSees has been developed as the computational platform for research in performance-based earthquake engineering at the Pacific Earthquake Engineering Research Center. OpenSees is also the simulation component for the NEESit since 2004.",
+    "modules": [
+        "petsc"
+    ],
+    "ontology": [],
+    "tags": [
+        "earthquake",
+        "geo",
+        "engineering",
+        "example"
+    ]
+}

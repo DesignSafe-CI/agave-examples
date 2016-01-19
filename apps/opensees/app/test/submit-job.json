@@ -1,0 +1,16 @@
+{
+  "name": "test-opensees-example",
+  "appId": "opensees-example-0.0.1",
+  "archive": true,
+  "batchQueue": "development",
+  "inputs": {
+    "input_script": "agave://designsafe.storage.default/example/applications/opensees-example-0.0.1/app/test/Truss.tcl"
+  },
+  "notifications": [
+    {
+      "url": "user@example.com",
+      "event": "*"
+    }
+  ]
+}
+}
