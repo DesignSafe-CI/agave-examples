@@ -1,0 +1,282 @@
+Idealized Inlet                        ! 30 CHARACTER ALPHANUMERIC RUN DESCRIPTION
+Mesh 1                                 ! 20 CHARACTER ALPANUMERIC RUN IDENTIFICATION
+ 1                                     ! NFOVER - NONFATAL ERROR OVERRIDE OPTION
+ 2                                     ! NABOUT - ABREVIATED OUTPUT OPTION PARAMETER
+ 0                                     ! NSCREEN - SCREEN OUTPUT (0=NO SCREEN OUTPUT, 1=SCREEN OUTPUT)
+ 0                                     ! IHOT - HOT START PARAMM (0=COLD START, 1=HOT START)
+ 1                                     ! ICS - POLAR COORDINATE OPTION (1=CART COORDS, 2=POLAR COORDS)
+ 0                                     ! IM - MODEL TYPE (0=2DDI, 1=3DL VS, 2=3DL DSS)
+ 1                                     ! NOLIBF - nonlinear bottom friction
+ 2                                     ! NOLIFA - nonlinear finite amplitude
+ 1                                     ! NOLICA - nonlinear advec (spat grads)
+ 1                                     ! NOLICAT - nonlinear advec (time derivs)
+ 1                                     ! NWP - VARIABLE BOTTOM FRICTION AND LATERAL VISCOSITY OPTION PARAMETER
+mannings_n_at_sea_floor
+ 0                                     ! NCOR - VARIABLE CORIOLIS IN SPACE OPTION PARAMETER
+ 0                                     ! NTIP - TIDAL POTENTIAL OPTION PARAMETER
+ 0                                     ! NWS - WIND STRESS AND BAROMETRIC PRESSURE OPTION PARAMETER
+ 1                                     ! NRAMP - RAMP FUNCTION OPTION (0=NO, 1=YES)
+ 9.81                                  ! G - ACCELERATION DUE TO GRAVITY - DETERMINES UNITS
+ 0.04                                  ! TAU0 - WEIGHTING FACTOR IN GWCE
+ 2                                     ! DT - TIME STEP (IN SECONDS)
+ 0.0                                   ! STATIM - STARTING TIME
+ 0.0                                   ! REFTIME - STARTING REFERENCE TIME (IN DAYS)
+ 1.5                                     ! RNDAY - TOTAL LENGTH OF SIMULATION (IN DAYS)
+ 0.5                                   ! DRAMP - TIME CONSTANT FOR RAMP FUNCTION
+ 0.35 0.30 0.35                        ! TIME WEIGHTING FACTORS FOR THE GWCE EQUATION
+ 0.010 2 1 .05                         ! H0 - MIMINMUM CUTOFF DEPTH, NODEDRYMIN, NODEWETMIN, VELMIN
+ -76.67  34.69                         ! SLAM0, SFEA0 - LONG. AND LAT. WHERE CPP IS CENTERED
+ 0.003                                 ! FFACTOR - BOTTOM FRICTION COEFFICIENT; IGNORED IF NWP = 1
+ 10.0                                  ! ESL - LATERAL EDDY VISCOSITY COEFFICIENT; IGNORED IF NWP =1
+ 0                                     ! CORI - CORIOLIS PARAMETER - IGNORED IF NCOR = 1
+ 0                                     ! NUMBER OF TIDAL POTENTIAL CONSTITUENTS BEING FORCED
+ 0                                     ! NBFR - TOTAL NUMBER OF FORCING FREQUENCIES ON OPEN BOUNDARIES
+100.0                                  ! ANGINN : INNER ANGLE THRESHOLD
+1                                      ! NFFR
+ M2                                    ! BOUNTAG - ALPHA NUMERIC DESCRIPTOR
+ 0.000140518902509   1.000  0.000      ! FREQUENCY, NODAL FACTOR, EQUILIBRIUM ARGUMENT (DEG)
+   M2                 ! ALPHANUMERIC DESCRIPTION OF OPEN BOUNDARY FORCING DATA SET WHICH FOLLOWS 
+      2.25          0
+      2.25          0
+      2.25          0
+      2.25          0
+    2.25          0
+    2.25          0
+    2.25          0
+    2.25          0
+      2.25          0
+      2.25          0
+      2.25          0
+      2.25          0
+      2.25          0
+      2.25          0
+    2.25          0
+    2.25          0
+    2.25          0
+    2.25          0
+      2.25          0
+      2.25          0
+      2.25          0
+1  0.5  1.5  450         ! NOUTE,TOUTSE,TOUTFE,NSPOOLE:ELEV STATION OUTPUT INFO (UNIT  61)
+106                      ! TOTAL NUMBER OF ELEVATION RECORDING STATIONS
+1000    0               !
+1000    500             !
+1000   -500             !
+2000    0               !
+2000   -1000            !
+500     0               !
+0       0               !
+2000    1000            !
+1500    700             !
+1500    0               !
+1500   -700             !
+0       500             !
+0      -500             !
+-1000   1000            !
+-1000  -1000            !
+1800.0 -1050.0         !
+1875.0 -900.0         !
+1800.0 -750.0         !
+1875.0 -600.0         !
+1800.0 -450.0         !
+1875.0 -300.0         !
+1800.0 -150.0         !
+1875.0 0.0         !
+1800.0 150.0         !
+1875.0 300.0         !
+1800.0 450.0         !
+1875.0 600.0         !
+1800.0 750.0         !
+1875.0 900.0         !
+1800.0 1050.0         !
+1810 0 !
+1820 0 !
+1830 0 !
+1840 0 !
+1850 0 !
+1860 0 !
+1870 0 !
+1880 0 !
+1890 0 !
+1900 0 !
+1800 -1200 !
+1800 1200 !
+1800 1050 !
+1800 -1050 !
+1800 1125 !
+1800 -1125 !
+1810 -1200 !
+1810 1200 !
+1810 1050 !
+1810 -1050 !
+1810 1125 !
+1810 -1125 !
+1820 -1200 !
+1820 1200 !
+1820 1050 !
+1820 -1050 !
+1820 1125 !
+1820 -1125 !
+1830 -1200 !
+1830 1200 !
+1830 1050 !
+1830 -1050 !
+1830 1125 !
+1830 -1125 !
+1840 -1200 !
+1840 1200 !
+1840 1050 !
+1840 -1050 !
+1840 1125 !
+1840 -1125 !
+1850 -1200 !
+1850 1200 !
+1850 1050 !
+1850 -1050 !
+1850 1125 !
+1850 -1125 !
+1860 -1200 !
+1860 1200 !
+1860 1050 !
+1860 -1050 !
+1860 1125 !
+1860 -1125 !
+1870 -1200 !
+1870 1200 !
+1870 1050 !
+1870 -1050 !
+1870 1125 !
+1870 -1125 !
+1880 -1200 !
+1880 1200 !
+1880 1050 !
+1880 -1050 !
+1880 1125 !
+1880 -1125 !
+1890 -1200 !
+1890 1200 !
+1890 1050 !
+1890 -1050 !
+1890 1125 !
+1890 -1125 !
+1900 -1200 !
+1900 1200 !
+1900 1050 !
+1900 -1050 !
+1900 1125 !
+1900 -1125 !
+1  0.5  1.5  450          ! NOUTV,TOUTSE,TOUTFE,NSPOOLE:VEL STATION OUTPUT INFO (UNIT  62)
+106                          ! TOTAL NUMBER OF VELOCITY RECORDING STATIONS
+1000    0               !
+1000    500             !
+1000   -500             !
+2000    0               !
+2000   -1000            !
+500     0               !
+0       0               !
+2000    1000            !
+1500    700             !
+1500    0               !
+1500   -700             !
+0       500             !
+0      -500             !
+-1000   1000            !
+-1000  -1000            !
+1800.0 -1050.0         !
+1875.0 -900.0         !
+1800.0 -750.0         !
+1875.0 -600.0         !
+1800.0 -450.0         !
+1875.0 -300.0         !
+1800.0 -150.0         !
+1875.0 0.0         !
+1800.0 150.0         !
+1875.0 300.0         !
+1800.0 450.0         !
+1875.0 600.0         !
+1800.0 750.0         !
+1875.0 900.0         !
+1800.0 1050.0         !
+1810 0 !
+1820 0 !
+1830 0 !
+1840 0 !
+1850 0 !
+1860 0 !
+1870 0 !
+1880 0 !
+1890 0 !
+1900 0 !
+1800 -1200 !
+1800 1200 !
+1800 1050 !
+1800 -1050 !
+1800 1125 !
+1800 -1125 !
+1810 -1200 !
+1810 1200 !
+1810 1050 !
+1810 -1050 !
+1810 1125 !
+1810 -1125 !
+1820 -1200 !
+1820 1200 !
+1820 1050 !
+1820 -1050 !
+1820 1125 !
+1820 -1125 !
+1830 -1200 !
+1830 1200 !
+1830 1050 !
+1830 -1050 !
+1830 1125 !
+1830 -1125 !
+1840 -1200 !
+1840 1200 !
+1840 1050 !
+1840 -1050 !
+1840 1125 !
+1840 -1125 !
+1850 -1200 !
+1850 1200 !
+1850 1050 !
+1850 -1050 !
+1850 1125 !
+1850 -1125 !
+1860 -1200 !
+1860 1200 !
+1860 1050 !
+1860 -1050 !
+1860 1125 !
+1860 -1125 !
+1870 -1200 !
+1870 1200 !
+1870 1050 !
+1870 -1050 !
+1870 1125 !
+1870 -1125 !
+1880 -1200 !
+1880 1200 !
+1880 1050 !
+1880 -1050 !
+1880 1125 !
+1880 -1125 !
+1890 -1200 !
+1890 1200 !
+1890 1050 !
+1890 -1050 !
+1890 1125 !
+1890 -1125 !
+1900 -1200 !
+1900 1200 !
+1900 1050 !
+1900 -1050 !
+1900 1125 !
+1900 -1125 !
+1  0.5  1.0  1800       ! NOUTGE,TOUTSGE,TOUTFGE,NSPOOLGE : GLOBAL ELEV OUTPUT (UNIT  63)
+1  0.5  1.0  1800       ! NOUTGV,TOUTSGV,TOUTFGV,NSPOOLGV : GLOBAL VEL  OUTPUT (UNIT  64)
+ 0                                        ! NHARF - NUMBER OF FREQENCIES IN HARMONIC ANALYSIS
+ 0.000 0.000 0 0.000                      ! THAS,THAF,NHAINC,FMV - HARMONIC ANALYSIS PARAMETERS
+ 0 0 0 0                                  ! NHASE,NHASV,NHAGE,NHAGV - CONTROL HARMONIC ANALYSIS AND OUTPUT TO UNITS 51,52,53,54
+ 0 21600                                  ! NHSTAR,NHSINC - HOT START FILE GENERATION PARAMETERS
+ 1 0 1.000000000E-005 25                  ! ITITER, ISLDIA, CONVCR, ITMAX - ALGEBRAIC SOLUTION PARAMETERS

@@ -1,0 +1,15 @@
+{
+  "name": "test-->designsafe.community.exec.stampede",
+  "appId": "adcirc-51.33",
+  "batchQueue": "serial",
+  "executionSystem": "designsafe.community.exec.stampede",
+  "maxRunTime": "00:10:00",
+  "nodeCount": 1,
+  "processorsPerNode": 12,
+  "archive": true,
+  "archiveSystem":"designsafe.storage.default",
+  "archivePath":"mock/archive/adcirc/${JOB_ID}",
+  "inputs": {
+    "inputDirectory":"agave://designsafe.storage.default/mock/adcirc_inputs"
+  }
+}

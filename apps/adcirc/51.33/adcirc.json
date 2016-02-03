@@ -1,0 +1,67 @@
+{
+  "name":"adcirc",
+  "parallelism":"SERIAL",
+  "version":"51.33",
+  "label":"ADCIRC",
+  "shortDescription":"ADCIRC is a system of computer programs for solving time dependent, free surface circulation and transport problems in two and three dimensions.",
+  "longDescription":"ADCIRC is a system of computer programs for solving time dependent, free surface circulation and transport problems in two and three dimensions. These programs utilize the finite element method in space allowing the use of highly flexible, unstructured grids. See http://adcirc.org/",
+  "defaultMemory":1,
+  "defaultMemoryPerNode":1,
+  "defaultProcessors":1,
+  "defaultQueue":"serial",
+  "defaultMaxRunTime": "00:10:00",
+  "deploymentPath":"mock/apps/adcirc/51.33",
+  "deploymentSystem":"designsafe.storage.default",
+  "executionSystem":"designsafe.community.exec.stampede",
+  "executionType":"HPC",
+  "templatePath":"wrapper.sh",
+  "testPath":"test/test.sh",
+  "checkpointable":false,
+  "modules":[],
+  "tags":[
+    "DesignSafe",
+    "hazards",
+    "NHERI",
+    "circulation",
+    "storm surge",
+    "larval transport",
+    "free surface circulation",
+    "transport problems",
+    "finite element",
+    "engineering"
+  ],
+  "ontology":[
+
+  ],
+  "inputs":[
+    {
+      "id":"inputDirectory",
+      "value":{
+        "default":"agave://designsafe.storage.default/mock/adcirc_inputs",
+        "type":"string",
+        "validator":"",
+        "visible":true,
+        "required":true,
+        "enquote":false
+      },
+      "details":{
+        "label":"Input Directory",
+        "description":"The directory containing your ADCIRC input files",
+        "argument":null,
+        "showArgument":false,
+        "repeatArgument":false
+      },
+      "semantics":{
+        "ontology":[
+          "xsd:string"
+        ],
+        "minCardinality":1,
+        "maxCardinality":1,
+        "fileTypes":[
+          "raw-0"
+        ]
+      }
+    }
+  ],
+  "parameters":[]
+}
