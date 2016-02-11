@@ -1,0 +1,24 @@
+{
+    "name": "opensees demo to queue",
+    "appId": "opensees-2.4.4.5804",
+    "maxRunTime": "00:01:00",
+    "memoryPerNode": "1GB",
+    "nodeCount": 1,
+    "processorsPerNode": 12,
+    "requestedTime": "00:05:00",
+    "archive": true,
+    "archiveSystem":"designsafe.storage.default",
+    "parameters" : {
+      "inputScript":"freeFieldEffective.tcl"
+    },
+    "inputs": {
+      "inputDirectory": "agave://designsafe.storage.default/mock/FreefieldAnalysis-Effective"
+    },
+    "notifications": [
+      {
+        "url" : "mock@tacc.utexas.edu",
+        "event": "*"
+      }
+    ]
+
+}

@@ -1,0 +1,78 @@
+\def\vectorform#1{\ensuremath{\left\{#1\right\}}}
+\def\matrixform#1{\ensuremath{\left[#1\right]}}
+
+\long\def\putinvector#1{\vectorform{\begin{array}{c}#1\end{array}}}
+\long\def\putinmatrix#1{\matrixform{\begin{array}{ccc}#1\end{array}}}
+
+\def\REF#1{(\ref{#1})}
+
+\newcommand{\trace}{\mathop{\mathrm{tr}}}
+\newcommand{\sign}{\mathop{\mathrm{sign}}}
+\newcommand{\vol}{\mathop{\mathrm{vol}}}
+\newcommand{\dev}{\mathop{\mathrm{dev}}}
+\newcommand{\norm}[1]{\mathop{\left\Vert#1\right\Vert}}
+
+\def\mathBox#1{\fbox{$\displaystyle #1$}}
+
+\def\R{\mathbb{R}}
+\def\N{\mathbb{N}}
+
+\newcommand{\DS}{\displaystyle}
+
+\newcounter{example}[section]
+
+\newenvironment{example}[1]%
+	{%
+		\refstepcounter{example}%
+		\bigskip
+		\hrule
+		\smallskip
+		\noindent
+		\textbf{Example~\theexample ~~~~#1}
+        \vskip 3pt
+	}{%
+		\medskip
+		\hrule
+		\bigskip
+	}
+	
+\renewcommand{\theexample}{\thesection.\arabic{example}}
+		
+
+\newcounter{interpretation}[section]
+
+\newenvironment{interpretation}[1]%
+	{%
+		\refstepcounter{interpretation}%
+		\medskip
+		%\hrule
+		\noindent
+		\textbf{Interpretation~\theinterpretation}{~~~~#1}\vskip 3pt
+	}{%
+		\hfill$\Box$
+		\medskip
+		%\hrule
+		%\bigskip
+	}
+	
+\renewcommand{\theinterpretation}{\thesection.\arabic{interpretation}}
+		
+
+\long\outer\def\important#1{\par\bigskip
+         \hbox to\hsize{%
+               \vrule\hfill
+               \vbox{\hsize=0.90\hsize#1\strut}%
+               \hfill\vrule}%
+         \medskip}
+
+\definecolor{red}{rgb}{1,0,0}
+
+\long\def\ShowSolution#1{{\textcolor{red}{#1}\par}}
+\long\def\HideSolution#1{}
+
+\def\showsolution{\let\solution\ShowSolution}
+\def\hidesolution{\let\solution\HideSolution}
+
+\hidesolution
+ \showsolution
+

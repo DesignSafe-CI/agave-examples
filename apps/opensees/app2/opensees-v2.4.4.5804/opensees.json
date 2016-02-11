@@ -1,0 +1,95 @@
+{
+    "id" : "opensees-v2.4.4.5804",
+    "name" : "opensees",
+    "parallelism" : "SERIAL",
+    "defaultProcessorsPerNode" : 1,
+    "defaultMemoryPerNode" : 1,
+    "defaultNodeCount" : 1,
+    "defaultMaxRunTime" : "00:01:59",
+    "defaultQueue" : "development",
+    "version" : "2.4.4.5804",
+    "helpURI" : null,
+    "label" : "OpenSees",
+    "shortDescription" : "OpenSees is a software framework for simulating the seismic response of structural and geotechnical systems.",
+    "longDescription" : "The Open System for Earthquake Engineering Simulation (OpenSees) is a software framework for simulating the seismic response of structural and geotechnical systems. OpenSees has been developed as the computational platform for research in performance-based earthquake engineering at the Pacific Earthquake Engineering Research Center. OpenSees is also the simulation component for the NEESit since 2004.",
+    "tags" : [
+      "demo",
+      "earthquake",
+      "geo",
+      "engineering"
+    ],
+    "ontology" : [ ],
+    "executionType" : "HPC",
+    "executionSystem" : "designsafe.community.exec.stampede",
+    "deploymentPath" : "mock/apps/opensees-v2.4.4.5804",
+    "deploymentSystem" : "designsafe.storage.default",
+    "templatePath" : "wrapper.sh",
+    "testPath" : "test/test.sh",
+    "checkpointable" : false,
+    "modules" : [
+      "petsc"
+    ],
+    "available" : true,
+    "inputs" : [
+    {
+      "id":"inputDirectory",
+      "value":{
+        "default":"agave://designsafe.storage.default/mock/FreefieldAnalysis-Effective",
+        "type":"string",
+        "validator":"",
+        "visible":true,
+        "required":true,
+        "enquote":false
+      },
+      "details":{
+        "label":"Input Directory",
+        "description":"The directory containing your OpenSees input files",
+        "argument":null,
+        "showArgument":false,
+        "repeatArgument":false
+      },
+      "semantics":{
+        "ontology":[
+          "xsd:string"
+        ],
+        "minCardinality":1,
+        "maxCardinality":1,
+        "fileTypes":[
+          "raw-0"
+        ]
+      }
+    }
+    ],
+    "parameters" : [ 
+      {
+        "id" : "inputScript",
+        "value" : {
+          "validator": "([^\\s]+(\\.(?i)(tcl))$)",
+          "visible" : true,
+          "required" : true,
+          "order" : 0,
+          "enquote" : false,
+          "default" : "freeFieldEffective.tcl",
+          "type" : "string"
+        },
+        "details" : {
+          "label" : "TCL Script",
+          "description" : "The OpenSees tcl script to execute.",
+          "argument" : null,
+          "showArgument" : false,
+          "repeatArgument" : false
+        },
+        "semantics" : {
+          "minCardinality" : 1,
+          "maxCardinality" : 1,
+          "ontology" : [
+            "http://sswapmeet.sswap.info/mime/text/Tcl"
+          ],
+          "fileTypes" : [
+            "tcl-0"
+          ]
+        }
+      }
+    ],
+    "outputs" : [ ]
+}

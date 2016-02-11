@@ -1,0 +1,24 @@
+{
+    "name": "openfoam-DH1",
+    "appId": "openfoam-2.4.0",
+    "memoryPerNode": "1GB",
+    "nodeCount": 2,
+    "processorsPerNode": 32,
+    "requestedTime": "00:20:00",
+    "archive": true,
+    "archiveSystem":"designsafe.storage.default",
+    "executionSystem":"designsafe.community.exec.stampede",
+    "parameters" : {
+      "solver":"pisoFoam"
+    },
+    "inputs": {
+      "inputDirectory": "agave://designsafe.storage.default/mock/openfoam_DH1"
+    },
+    "notifications": [
+      {
+        "url" : "mock@tacc.utexas.edu",
+        "event": "*"
+      }
+    ]
+
+}

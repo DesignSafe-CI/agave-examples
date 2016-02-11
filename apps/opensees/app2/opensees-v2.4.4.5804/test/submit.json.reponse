@@ -1,0 +1,58 @@
+{
+  "status" : "success",
+  "message" : null,
+  "version" : "2.1.0-r6d11c",
+  "result" : {
+    "id" : "0001422916421870-5056a550b8-0001-007",
+    "name" : "opensees demo",
+    "owner" : "mock",
+    "appId" : "opensees-2.4.4.5804",
+    "executionSystem" : "mock.compute.stampede.fork",
+    "batchQueue" : "development",
+    "nodeCount" : 1,
+    "processorsPerNode" : 1,
+    "memoryPerNode" : 1.0,
+    "maxRunTime" : "01:59:00",
+    "archive" : false,
+    "retries" : 0,
+    "localId" : null,
+    "outputPath" : null,
+    "status" : "PENDING",
+    "submitTime" : "2015-02-02T16:33:41.885-06:00",
+    "startTime" : null,
+    "endTime" : null,
+    "inputs" : {
+      "dataset" : "agave://mock.compute.stampede.fork/mock/apps/opensees-2.4.4/test/1elem.tcl"
+    },
+    "parameters" : { },
+    "_links" : {
+      "self" : {
+        "href" : "https://agave.iplantc.org/jobs/v2/0001422916421870-5056a550b8-0001-007"
+      },
+      "app" : {
+        "href" : "https://agave.iplantc.org/apps/v2/opensees-2.4.4.5804"
+      },
+      "executionSystem" : {
+        "href" : "https://agave.iplantc.org/systems/v2/mock.compute.stampede.fork"
+      },
+      "archiveData" : {
+        "href" : "https://agave.iplantc.org/jobs/v2/0001422916421870-5056a550b8-0001-007/outputs/listings"
+      },
+      "owner" : {
+        "href" : "https://agave.iplantc.org/profiles/v2/mock"
+      },
+      "permissions" : {
+        "href" : "https://agave.iplantc.org/jobs/v2/0001422916421870-5056a550b8-0001-007/pems"
+      },
+      "history" : {
+        "href" : "https://agave.iplantc.org/jobs/v2/0001422916421870-5056a550b8-0001-007/history"
+      },
+      "metadata" : {
+        "href" : "https://agave.iplantc.org/meta/v2/data/?q={\"associationIds\":\"0001422916421870-5056a550b8-0001-007\"}"
+      },
+      "notifications" : {
+        "href" : "https://agave.iplantc.org/notifications/v2/?associatedUuid=0001422916421870-5056a550b8-0001-007"
+      }
+    }
+  }
+}
