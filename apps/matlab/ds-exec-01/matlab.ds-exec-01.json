@@ -1,0 +1,70 @@
+{
+  "name":"Matlab",
+  "parallelism":"SERIAL",
+  "version":"0.1.0",
+  "label":"Matlab",
+  "shortDescription":"Run an interactive Matlab 2015b session on a virtual machine.",
+  "longDescription":"Run an interactive Matlab 2015b session on a virtual machine.",
+  "parallelism" : "SERIAL",
+  "defaultProcessorsPerNode" : 1,
+  "defaultMemoryPerNode" : 1,
+  "defaultNodeCount" : 1,
+  "defaultMaxRunTime" : "04:00:00",
+  "defaultQueue" : null,
+  "helpURI" : "https://www.designsafe-ci.org",
+  "deploymentPath":"mock/apps/matlab/stampede",
+  "deploymentSystem":"designsafe.storage.default",
+  "executionSystem":"designsafe.community.exec.stampede",
+  "executionType" : "CLI",
+  "executionSystem" : "designsafe.community.exec-01",
+  "deploymentPath" : "mock/apps/matlab/ds-exec-01",
+  "deploymentSystem" : "designsafe.storage.default",
+  "templatePath" : "wrapper.sh",
+  "testPath" : "test/test.sh",
+  "checkpointable" : false,
+  "modules" : [ ],
+  "inputs" : [ ],
+  "tags":[
+    "DesignSafe",
+    "hazards",
+    "NHERI",
+    "VNC",
+    "desktop",
+    "matlab",
+    "VM"
+  ],
+  "ontology":[
+  ],
+  "inputs":[
+    {
+      "id":"workingDirectory",
+      "value":{
+        "default":"agave://designsafe.storage.default/mock/",
+        "type":"string",
+        "validator":"",
+        "visible":true,
+        "required":true,
+        "enquote":false
+      },
+      "details":{
+        "label":"Working Directory",
+        "description":"The directory containing the files that you want to work on. This directory and its files will be copied to where your Matlab session runs.",
+        "argument":null,
+        "showArgument":false,
+        "repeatArgument":false
+      },
+      "semantics":{
+        "ontology":[
+          "xsd:string"
+        ],
+        "minCardinality":1,
+        "maxCardinality":1,
+        "fileTypes":[
+          "raw-0"
+        ]
+      }
+    }
+  ],
+  "parameters" : [ ],
+  "outputs" : [ ]
+}

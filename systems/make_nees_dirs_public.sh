@@ -1,4 +1,5 @@
 #!/bin/bash
+auth-tokens-refresh -S
 files-pems-update -S nees.public -U PUBLIC -P READ -R /NEES-2005-0002.groups
 files-pems-update -S nees.public -U PUBLIC -P READ -R /NEES-2005-0004.groups
 files-pems-update -S nees.public -U PUBLIC -P READ -R /NEES-2005-0006.groups

@@ -1,18 +1,17 @@
 {
-    "name": "openfoam-DH1",
-    "appId": "openfoam-2.4.0",
+    "name": "test-vnc-0.1",
+    "appId": "vnc-0.1",
     "memoryPerNode": "1GB",
-    "nodeCount": 2,
-    "processorsPerNode": 32,
-    "requestedTime": "00:20:00",
+    "nodeCount": 1,
+    "processorsPerNode": 16,
+    "requestedTime": "01:00:00",
     "archive": true,
     "archiveSystem":"designsafe.storage.default",
     "executionSystem":"designsafe.community.exec.stampede",
     "parameters" : {
-      "solver":"pisoFoam"
     },
     "inputs": {
-      "inputDirectory": "agave://designsafe.storage.default/mock/examples/openfoam/openfoam_DH1"
+      "workingDirectory": "agave://designsafe.storage.default/mock/apps/vnc/stampede/test/testInputs"
     },
     "notifications": [
       {

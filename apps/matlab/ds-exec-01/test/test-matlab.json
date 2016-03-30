@@ -1,18 +1,17 @@
 {
-    "name": "openfoam-DH1",
-    "appId": "openfoam-2.4.0",
+    "name": "test-matlab-0.1",
+    "appId": "Matlab-0.1",
     "memoryPerNode": "1GB",
-    "nodeCount": 2,
-    "processorsPerNode": 32,
+    "nodeCount": 1,
+    "processorsPerNode": 16,
     "requestedTime": "00:20:00",
     "archive": true,
     "archiveSystem":"designsafe.storage.default",
     "executionSystem":"designsafe.community.exec.stampede",
     "parameters" : {
-      "solver":"pisoFoam"
     },
     "inputs": {
-      "inputDirectory": "agave://designsafe.storage.default/mock/examples/openfoam/openfoam_DH1"
+      "workingDirectory": "agave://designsafe.storage.default/mock/apps/matlab/stampede/test/testInputs"
     },
     "notifications": [
       {

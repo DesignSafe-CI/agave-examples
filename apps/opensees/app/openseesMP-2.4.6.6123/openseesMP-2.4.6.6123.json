@@ -1,15 +1,16 @@
 {
-    "id" : "opensees-v2.4.4.5804",
-    "name" : "opensees",
-    "parallelism" : "SERIAL",
-    "defaultProcessorsPerNode" : 1,
+    "id" : "openseesMP-v2.4.6.6123",
+    "name" : "OpenSeesMP",
+    "parallelism" : "parallel",
+    "defaultProcessors":32,
+    "defaultProcessorsPerNode":32,
     "defaultMemoryPerNode" : 1,
-    "defaultNodeCount" : 1,
-    "defaultMaxRunTime" : "00:01:59",
-    "defaultQueue" : "development",
-    "version" : "2.4.4.5804",
-    "helpURI" : null,
-    "label" : "OpenSees",
+    "defaultNodeCount" : 2,
+    "defaultMaxRunTime" : "06:00:00",
+    "defaultQueue" : "normal",
+    "version" : "2.4.6.6123",
+    "helpURI" : "http://opensees.berkeley.edu/",
+    "label" : "OpenSeesMP",
     "shortDescription" : "OpenSees is a software framework for simulating the seismic response of structural and geotechnical systems.",
     "longDescription" : "The Open System for Earthquake Engineering Simulation (OpenSees) is a software framework for simulating the seismic response of structural and geotechnical systems. OpenSees has been developed as the computational platform for research in performance-based earthquake engineering at the Pacific Earthquake Engineering Research Center. OpenSees is also the simulation component for the NEESit since 2004.",
     "tags" : [
@@ -21,13 +22,13 @@
     "ontology" : [ ],
     "executionType" : "HPC",
     "executionSystem" : "designsafe.community.exec.stampede",
-    "deploymentPath" : "mock/apps/opensees-v2.4.4.5804",
+    "deploymentPath" : "mock/apps/openseesMP-2.4.6.6123",
     "deploymentSystem" : "designsafe.storage.default",
     "templatePath" : "wrapper.sh",
     "testPath" : "test/test.sh",
     "checkpointable" : false,
     "modules" : [
-      "petsc"
+      "load petsc"
     ],
     "available" : true,
     "inputs" : [
@@ -43,7 +44,7 @@
       },
       "details":{
         "label":"Input Directory",
-        "description":"The directory containing your OpenSees input files",
+        "description":"The directory containing your OpenSees input files as well as your OpenSees TCL script. You can drag the link for the directory from the Data Browser on the left, or click the 'Select Input' button and then select the directory. To try out sample data copy and paste 'agave://designsafe.storage.default/mock/examples/opensees/FreefieldAnalysisEffective' above.",
         "argument":null,
         "showArgument":false,
         "repeatArgument":false
@@ -60,7 +61,7 @@
       }
     }
     ],
-    "parameters" : [ 
+    "parameters" : [
       {
         "id" : "inputScript",
         "value" : {
@@ -74,7 +75,7 @@
         },
         "details" : {
           "label" : "TCL Script",
-          "description" : "The OpenSees tcl script to execute.",
+          "description" : "The filename only of the OpenSees TCL script to execute. This file should reside in the Input Directory specified. To try this out copy and paste in 'freeFieldEffective.tcl'.",
           "argument" : null,
           "showArgument" : false,
           "repeatArgument" : false

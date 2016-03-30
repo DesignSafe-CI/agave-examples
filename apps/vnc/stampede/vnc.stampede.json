@@ -1,0 +1,64 @@
+{
+  "name":"vnc",
+  "parallelism":"parallel",
+  "version":"0.1",
+  "label":"VNC Desktop",
+  "shortDescription":"Run a desktop session on Stampede.",
+  "longDescription":"Run a desktop session on Stampede.",
+  "defaultMemory":1,
+  "defaultMemoryPerNode":1,
+  "defaultNodeCount":1,
+  "defaultProcessors":16,
+  "defaultProcessorsPerNode":16,
+  "defaultQueue":"vis",
+  "defaultMaxRunTime": "04:00:00",
+  "deploymentPath":"mock/apps/vnc/stampede",
+  "deploymentSystem":"designsafe.storage.default",
+  "executionSystem":"designsafe.community.exec.stampede",
+  "executionType":"HPC",
+  "templatePath":"wrapper.sh",
+  "testPath":"test/test.sh",
+  "checkpointable":false,
+  "modules":["load purge", "load TACC"],
+  "tags":[
+    "DesignSafe",
+    "hazards",
+    "NHERI",
+    "VNC",
+    "desktop"
+  ],
+  "ontology":[
+  ],
+  "inputs":[
+    {
+      "id":"workingDirectory",
+      "value":{
+        "default":"agave://designsafe.storage.default/mock/",
+        "type":"string",
+        "validator":"",
+        "visible":true,
+        "required":true,
+        "enquote":false
+      },
+      "details":{
+        "label":"Working Directory",
+        "description":"The directory containing the files that you want to work on.",
+        "argument":null,
+        "showArgument":false,
+        "repeatArgument":false
+      },
+      "semantics":{
+        "ontology":[
+          "xsd:string"
+        ],
+        "minCardinality":1,
+        "maxCardinality":1,
+        "fileTypes":[
+          "raw-0"
+        ]
+      }
+    }
+  ],
+  "parameters" : [ ],
+  "outputs" : [ ]
+}

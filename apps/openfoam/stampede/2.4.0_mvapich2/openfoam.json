@@ -2,16 +2,17 @@
   "name":"openfoam",
   "parallelism":"parallel",
   "version":"2.4.0",
-  "label":"OpenFoam",
+  "label":"OpenFOAM",
   "shortDescription":"OpenFOAM is free, open source software for computational fluid dynamics (CFD), developed primarily by CFD Direct, on behalf of the OpenFOAM Foundation.",
   "longDescription":"The OpenFOAM (Open Field Operation and Manipulation) CFD Toolbox is a free, open source CFD software package which has a large user base across most areas of engineering and science, from both commercial and academic organisations. OpenFOAM has an extensive range of features to solve anything from complex fluid flows involving chemical reactions, turbulence and heat transfer, to solid dynamics and electromagnetics. It includes tools for meshing, notably snappyHexMesh, a parallelised mesher for complex CAD geometries, and for pre- and post-processing. Almost everything (including meshing, and pre- and post-processing) runs in parallel as standard, enabling users to take full advantage of computer hardware at their disposal.",
+  "helpURI":"http://www.openfoam.org/",
   "defaultMemory":1,
   "defaultMemoryPerNode":1,
   "defaultNodeCount":2,
   "defaultProcessors":32,
   "defaultProcessorsPerNode":32,
   "defaultQueue":"normal",
-  "defaultMaxRunTime": "02:00:00",
+  "defaultMaxRunTime": "04:00:00",
   "deploymentPath":"mock/apps/openfoam/stampede/2.4.0_mvapich2",
   "deploymentSystem":"designsafe.storage.default",
   "executionSystem":"designsafe.community.exec.stampede",
@@ -33,7 +34,7 @@
     {
       "id":"inputDirectory",
       "value":{
-        "default":"agave://designsafe.storage.default/mock/openfoam_DH1",
+        "default":"agave://designsafe.storage.default/mock/examples/openfoam/openfoam_DH1",
         "type":"string",
         "validator":"",
         "visible":true,
@@ -42,7 +43,7 @@
       },
       "details":{
         "label":"Case Directory",
-        "description":"The directory containing your OpenFoam case. This should contain your '0', 'constant', and 'system' directories. To try out a smple dataset copy and paste agave://designsafe.storage.default/mock/openfoam_DH1 above.",
+        "description":"The directory containing your OpenFOAM case. This should contain your '0', 'constant', and 'system' directories. You can drag the link for the directory from the Data Browser on the left, or click the 'Select Input' button and then select the directory. To try out a sample dataset copy and paste 'agave://designsafe.storage.default/mock/examples/openfoam/openfoam_DH1' above.",
         "argument":null,
         "showArgument":false,
         "repeatArgument":false
@@ -79,7 +80,7 @@
       },
       "details":{
         "label":"Solver",
-        "description":"Select the OpenFoam solver to run.",
+        "description":"Select the OpenFOAM solver to run. To try this out select 'pisoFoam'.",
         "argument":null,
         "showArgument":false,
         "repeatArgument":false

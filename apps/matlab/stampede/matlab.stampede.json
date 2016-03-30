@@ -1,0 +1,66 @@
+{
+  "name":"Matlab",
+  "parallelism":"parallel",
+  "version":"0.1",
+  "label":"MATLAB",
+  "shortDescription":"Run an interactive MATLAB 2015b session on Stampede. Submit a help ticket to get your license configured or approved.",
+  "longDescription":"Run an interactive MATLAB 2015b session on Stampede. Submit a help ticket to get your license configured or approved.",
+  "helpURI":"http://www.mathworks.com/help/matlab/index.html",
+  "defaultMemory":1,
+  "defaultMemoryPerNode":1,
+  "defaultNodeCount":1,
+  "defaultProcessors":16,
+  "defaultProcessorsPerNode":16,
+  "defaultQueue":"normal",
+  "defaultMaxRunTime": "02:00:00",
+  "deploymentPath":"mock/apps/matlab/stampede",
+  "deploymentSystem":"designsafe.storage.default",
+  "executionSystem":"designsafe.community.exec.stampede",
+  "executionType":"HPC",
+  "templatePath":"wrapper.sh",
+  "testPath":"test/test.sh",
+  "checkpointable":false,
+  "modules":["purge", "load TACC", "load matlab"],
+  "tags":[
+    "DesignSafe",
+    "hazards",
+    "NHERI",
+    "VNC",
+    "desktop",
+    "matlab"
+  ],
+  "ontology":[
+  ],
+  "inputs":[
+    {
+      "id":"workingDirectory",
+      "value":{
+        "default":"agave://designsafe.storage.default/mock/",
+        "type":"string",
+        "validator":"",
+        "visible":true,
+        "required":true,
+        "enquote":false
+      },
+      "details":{
+        "label":"Working Directory",
+        "description":"The directory containing the files that you want to work on. This directory and its files will be copied to where your MATLAB session runs. You can drag the link for the directory from the Data Browser on the left, or click the 'Select Input' button and then select the directory.",
+        "argument":null,
+        "showArgument":false,
+        "repeatArgument":false
+      },
+      "semantics":{
+        "ontology":[
+          "xsd:string"
+        ],
+        "minCardinality":1,
+        "maxCardinality":1,
+        "fileTypes":[
+          "raw-0"
+        ]
+      }
+    }
+  ],
+  "parameters" : [ ],
+  "outputs" : [ ]
+}

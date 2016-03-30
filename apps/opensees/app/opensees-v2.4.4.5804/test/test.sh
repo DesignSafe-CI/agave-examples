@@ -3,9 +3,10 @@
 DIR=$( cd "$( dirname "$0" )" && pwd )
 
 # set test variables
-export input_script="Truss.tcl"
+export dataset="1elem.tcl"
 export AGAVE_JOB_MEMORY_PER_NODE=1
-export AGAVE_JOB_NAME=opensees-example-job
+export AGAVE_JOB_NAME=some-test-job-form-my-research
+#export AGAVE_JOB_CALLBACK_FAILURE=
 
 # stage file to root as it would be during a run
 cp $DIR/$dataset $DIR/../
