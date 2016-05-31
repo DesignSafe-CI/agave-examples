@@ -4,7 +4,7 @@
   "version":"0.2",
   "label":"MATLAB",
   "shortDescription":"Run an interactive MATLAB 2015b session on Stampede. Submit a help ticket to get your license configured or approved.",
-  "longDescription":"Run an interactive MATLAB 2015b session on Stampede. Submit a help ticket to get your license configured or approved.",
+  "longDescription":"Run an interactive MATLAB 2015b session on Stampede. Submit a help ticket to get your license configured or approved. Be sure to exit the Matlab application when you are finished with the session or any files saved will not be archived with the job.",
   "helpURI":"http://www.mathworks.com/help/matlab/index.html",
   "defaultMemory":1,
   "defaultMemoryPerNode":1,
