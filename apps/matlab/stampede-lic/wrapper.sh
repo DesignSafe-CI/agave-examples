@@ -155,7 +155,7 @@ CWD=${workingDirectory}
 # vglrun matlab
 
 # run an xterm for the user; execution will hold here; launch matlab as well
-xterm -r -ls -geometry 80x24+10+10 -title '*** Exit this window to kill your VNC server ***' -e 'matlab'
+xterm -r -ls -geometry 80x24+10+10 -title '*** Exit this window to kill your MATLAB session ***' -e 'matlab'
 
 
 # job is done!
@@ -173,6 +173,13 @@ sleep 1
 echo job $_SLURM_JOB_ID execution finished at: `date`
 
 cd ..
+rm -rf .matlab_license
+rm -rf vncp.txt
+
+#sleep to let the files get cleaned up
+sleep 2
+
+${AGAVE_JOB_CALLBACK_CLEANING_UP}
 
 if [ ! $? ]; then
         echo "VNC exited with an error status. $?" >&2
