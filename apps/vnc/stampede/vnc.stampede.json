@@ -10,7 +10,7 @@
   "defaultNodeCount":1,
   "defaultProcessors":16,
   "defaultProcessorsPerNode":16,
-  "defaultQueue":"vis",
+  "defaultQueue":"normal",
   "defaultMaxRunTime": "04:00:00",
   "deploymentPath":"mock/apps/vnc/stampede",
   "deploymentSystem":"designsafe.storage.default",

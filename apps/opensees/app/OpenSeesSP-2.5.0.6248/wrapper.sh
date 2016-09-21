@@ -18,7 +18,7 @@ echo "TCLSCRIPT is $TCLSCRIPT"
 
 # Run the script with the runtime values passed in from the job request
 
-cd ${inputDirectory}
+cd "${inputDirectory}"
 OUT=`$OPENSEES_BIN < $TCLSCRIPT`
 cd ..
 

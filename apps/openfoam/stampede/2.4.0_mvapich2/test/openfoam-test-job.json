@@ -1,6 +1,6 @@
 {
     "name": "openfoam-DH1",
-    "appId": "openfoam-2.4.0",
+    "appId": "openfoam-2.4.0u11",
     "memoryPerNode": "1GB",
     "nodeCount": 2,
     "processorsPerNode": 32,

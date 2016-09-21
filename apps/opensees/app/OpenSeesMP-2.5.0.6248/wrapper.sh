@@ -16,14 +16,16 @@ TCLSCRIPT="${INPUTSCRIPT##*/}"
 echo "TCLSCRIPT is $TCLSCRIPT"
 
 # Run the script with the runtime values passed in from the job request
-cd ${inputDirectory}
+cd "${inputDirectory}"
+OUT=`$OPENSEES_BIN < $TCLSCRIPT`
+cd ..
 
 ibrun $OPENSEES_BIN $TCLSCRIPT
 
 cd ..
 
 if [ ! $? ]; then
-        echo "OpenSeesSP exited with an error status. $?" >&2
+        echo "OpenSeesMP exited with an error status. $?" >&2
         ${AGAVE_JOB_CALLBACK_FAILURE}
         exit
 fi
