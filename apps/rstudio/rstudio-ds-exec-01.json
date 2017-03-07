@@ -1,0 +1,38 @@
+{
+  "name":"rstudio-ds-exec-01",
+  "parallelism":"SERIAL",
+  "version":"0.1",
+  "label":"RStudio",
+  "shortDescription":"Run an interactive RStudio session.",
+  "longDescription":"Run an interactive RStudio session.",
+  "parallelism" : "SERIAL",
+  "defaultProcessorsPerNode" : 1,
+  "defaultMemoryPerNode" : 1,
+  "defaultNodeCount" : 1,
+  "defaultMaxRunTime" : "24:00:00",
+  "defaultQueue" : null,
+  "helpURI" : "https://www.designsafe-ci.org",
+  "deploymentPath":"mock/apps/rstudio/ds-exec-01",
+  "deploymentSystem":"designsafe.storage.default",
+  "executionType" : "CLI",
+  "executionSystem" : "designsafe.community.exec-01",
+  "templatePath" : "wrapper.sh",
+  "testPath" : "test/test.sh",
+  "checkpointable" : false,
+  "modules" : [ ],
+  "inputs" : [ ],
+  "tags":[
+    "DesignSafe",
+    "hazards",
+    "NHERI",
+    "RStudio",
+    "desktop",
+    "VM"
+  ],
+  "ontology":[
+  ],
+  "inputs":[
+  ],
+  "parameters" : [],
+  "outputs" : [ ]
+}

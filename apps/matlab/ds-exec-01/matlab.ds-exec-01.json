@@ -4,12 +4,12 @@
   "version":"0.1",
   "label":"MATLAB VM",
   "shortDescription":"Run an interactive Matlab 2016a session on a virtual machine.",
-  "longDescription":"Run an interactive Matlab 2016a session on a virtual machine.",
+  "longDescription":"Run an interactive Matlab 2016a session on a virtual machine. Work directly on your files rather than needing to copy them to and from Stampede.",
   "parallelism" : "SERIAL",
   "defaultProcessorsPerNode" : 1,
   "defaultMemoryPerNode" : 1,
   "defaultNodeCount" : 1,
-  "defaultMaxRunTime" : "04:00:00",
+  "defaultMaxRunTime" : "24:00:00",
   "defaultQueue" : null,
   "helpURI" : "https://www.designsafe-ci.org",
   "deploymentPath":"mock/apps/matlab/ds-exec-01",
@@ -34,6 +34,31 @@
   ],
   "inputs":[
   ],
-  "parameters" : [ ],
+  "parameters" : [ {
+    "id" : "_license",
+    "value" : {
+      "validator": "",
+      "visible" : true,
+      "required" : true,
+      "order" : 0,
+      "enquote" : false,
+      "default" : "",
+      "type" : "string"
+    },
+    "details" : {
+      "label" : "Matlab License File Text",
+      "description" : "The text that should be put in the Matlab license file.",
+      "argument" : null,
+      "showArgument" : false,
+      "repeatArgument" : false
+    },
+    "semantics": {
+        "ontology": [
+          "xs:string"
+        ],
+        "minCardinality": 1,
+        "maxCardinality": 1
+    }
+  }],
   "outputs" : [ ]
 }

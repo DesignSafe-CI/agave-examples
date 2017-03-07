@@ -21,7 +21,7 @@
     ],
     "ontology" : [ ],
     "executionType" : "HPC",
-    "executionSystem" : "designsafe.community.exec.stampede",
+    "executionSystem" : "designsafe.community.exec.stampede.nores",
     "deploymentPath" : "mock/apps/OpenSeesMP-2.5.0.6248",
     "deploymentSystem" : "designsafe.storage.default",
     "templatePath" : "wrapper.sh",

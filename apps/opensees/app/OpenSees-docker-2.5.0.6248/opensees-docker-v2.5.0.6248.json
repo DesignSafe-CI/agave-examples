@@ -1,0 +1,96 @@
+{
+  "id":"opensees-docker-v2.5.0.6248",
+  "name":"opensees-docker",
+  "parallelism":"SERIAL",
+  "version":"2.5.0.6248",
+  "label":"OpenSees-EXPRESS",
+  "shortDescription":"OpenSees is a software framework for simulating the seismic response of structural and geotechnical systems.",
+  "longDescription":"OpenSees is a software framework for simulating the seismic response of structural and geotechnical systems. The version of OpenSees available here performs analysis using a single tcl script, and runs on a virtual machine instead of an HPC system to avoid queue time. Interactive OpenSees will be available soon. This interpreter is for the analysis of small models by users who have need for quick execution turnaround time.",
+  "defaultMemory":1,
+  "defaultMemoryPerNode":1,
+  "defaultProcessors":1,
+  "defaultQueue":"debug",
+  "defaultMaxRunTime": "02:00:00",
+  "deploymentPath" : "mock/apps/OpenSees-docker-2.5.0.6248",
+  "deploymentSystem" : "designsafe.storage.default",
+  "storageSystem" : "designsafe.storage.default",
+  "executionSystem":"designsafe.community.data-01",
+  "executionType":"CLI",
+  "templatePath":"wrapper.sh",
+  "testPath":"test/test.sh",
+  "checkpointable":false,
+  "modules":[
+
+  ],
+  "tags":[
+    "demo",
+    "earthquake",
+    "geo",
+    "engineering"
+  ],
+  "ontology":[
+
+  ],
+  "inputs" : [
+  {
+    "id":"inputDirectory",
+    "value":{
+      "default":"agave://designsafe.storage.default/mock/FreefieldAnalysis-Effective",
+      "type":"string",
+      "validator":"",
+      "visible":true,
+      "required":true,
+      "enquote":false
+    },
+    "details":{
+      "label":"Input Directory",
+      "description":"The directory containing your OpenSees input files as well as your OpenSees TCL script. You can drag the link for the directory from the Data Browser on the left, or click the 'Select Input' button and then select the directory. To try out sample data copy and paste 'agave://designsafe.storage.default/mock/examples/opensees/FreefieldAnalysisEffective' above.",
+      "argument":null,
+      "showArgument":false,
+      "repeatArgument":false
+    },
+    "semantics":{
+      "ontology":[
+        "xsd:string"
+      ],
+      "minCardinality":1,
+      "maxCardinality":1,
+      "fileTypes":[
+        "raw-0"
+      ]
+    }
+  }
+  ],
+  "parameters" : [
+    {
+      "id" : "inputScript",
+      "value" : {
+        "validator": "([^\\s]+(\\.(?i)(tcl))$)",
+        "visible" : true,
+        "required" : true,
+        "order" : 0,
+        "enquote" : false,
+        "default" : "freeFieldEffective.tcl",
+        "type" : "string"
+      },
+      "details" : {
+        "label" : "TCL Script",
+        "description" : "The filename only of the OpenSees TCL script to execute. This file should reside in the Input Directory specified. To try this out copy and paste in 'freeFieldEffective.tcl'.",
+        "argument" : null,
+        "showArgument" : false,
+        "repeatArgument" : false
+      },
+      "semantics" : {
+        "minCardinality" : 1,
+        "maxCardinality" : 1,
+        "ontology" : [
+          "http://sswapmeet.sswap.info/mime/text/Tcl"
+        ],
+        "fileTypes" : [
+          "tcl-0"
+        ]
+      }
+    }
+  ],
+  "outputs" : [ ]
+}

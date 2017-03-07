@@ -1,0 +1,10 @@
+{
+    "name": "opensees docker demo",
+    "appId": "opensees-docker-2.5.0.6248",
+    "archive": true,
+    "archiveSystem":"designsafe.storage.default",
+    "parameters" : {
+      "inputScript":"1elem.tcl"
+    },
+    "inputs": {}
+}

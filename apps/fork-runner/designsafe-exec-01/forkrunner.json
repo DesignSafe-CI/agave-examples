@@ -1,0 +1,54 @@
+{
+  "name" : "fork-runner",
+  "parallelism" : "SERIAL",
+  "defaultProcessorsPerNode" : 1,
+  "defaultMemoryPerNode" : 1,
+  "defaultNodeCount" : 1,
+  "defaultMaxRunTime" : "02:00:00",
+  "defaultQueue" : null,
+  "version" : "0.1.0",
+  "helpURI" : "https://www.designsafe-ci.org",
+  "label" : "Fork a command at a shell",
+  "shortDescription" : "This will fork whatever command you give in the command parameter",
+  "longDescription" : "This will fork whatever command you give in the command parameter",
+  "tags" : [
+    "fork"
+  ],
+  "ontology" : [ ],
+  "executionType" : "CLI",
+  "executionSystem" : "designsafe.community.exec-01",
+  "deploymentPath" : "mock/apps/fork-runner/designsafe-exec-01",
+  "deploymentSystem" : "designsafe.storage.default",
+  "templatePath" : "wrapper.sh",
+  "testPath" : "test/test.sh",
+  "checkpointable" : false,
+  "modules" : [ ],
+  "inputs" : [ ],
+  "parameters" : [
+    {
+      "id" : "command",
+      "value" : {
+        "visible" : true,
+        "required" : true,
+        "type" : "string",
+        "order" : 0,
+        "enquote" : false,
+        "default" : "/bin/date",
+        "validator" : null
+      },
+      "details" : {
+        "label" : "Command to run",
+        "description" : "This is the actual shell command you want to run",
+        "argument" : "sh -c ",
+        "showArgument" : true,
+        "repeatArgument" : false
+      },
+      "semantics" : {
+        "minCardinality" : 1,
+        "maxCardinality" : 1,
+        "ontology" : [ ]
+      }
+    }
+  ],
+  "outputs" : [ ]
+}

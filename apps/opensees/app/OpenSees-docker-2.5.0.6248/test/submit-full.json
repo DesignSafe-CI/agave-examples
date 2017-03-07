@@ -1,0 +1,30 @@
+{
+  "name": "opensees demo",
+  "appId": "opensees-2.4.4.5804",
+  "queue": "debug",
+  "nodeCount": 1,
+  "maxMemoryPerNode": 1,
+  "processorsPerNode": 1,
+  "requestedTime": "00:05:00",
+  "archive": true,
+  "archiveSystem": "mock.storage.azure",
+  "parameters" : null,
+  "inputs": {
+    "inputFile": "agave://data.iplantcollaborative.org/mock/inputs/opensees-2.4.4/1elem.tcl"
+  },
+  "notifications": [
+  	{
+  		"url" : "http://requestb.agaveapi.co/1ayhgnt1?job_id=${JOB_ID}&status=${JOB_STATUS}",
+  		"event": "*",
+  		"persistent": true
+  	},
+  	{
+  		"url" : "dooley@tacc.utexas.edu",
+  		"event": "FINISHED"
+  	},
+    {
+      "url" : "dooley@tacc.utexas.edu",
+      "event": "FAILED"
+    }
+  ]
+}

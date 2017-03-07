@@ -1,0 +1,11 @@
+{"name" : "ds_app",
+    "value" : {
+      "id" : "Matlab-0.3",
+      "label" : "Matlab",
+      "version" : "0.3",
+      "type" : "agave",
+      "isPublic" : false,
+      "available" : true,
+      "shortDescription" : "Run an interactive MATLAB 2016a session on Stampede. Submit a help ticket to get your license configured or approved."
+    }
+}}

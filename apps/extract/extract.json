@@ -1,0 +1,63 @@
+{
+  "id":"extract",
+  "name":"extract",
+  "parallelism":"SERIAL",
+  "version":"0.1",
+  "label":"Extract tar/zip/gzip File",
+  "shortDescription":"Extract a tar, tar.gz, tgz, gz, or zip file.",
+  "longDescription":"Extract a tar, tar.gz, tgz, gz, or zip file.",
+  "defaultMemory":1,
+  "defaultMemoryPerNode":1,
+  "defaultProcessors":1,
+  "defaultQueue":"debug",
+  "defaultMaxRunTime": "02:00:00",
+  "deploymentPath" : "mock/apps/extract",
+  "deploymentSystem" : "designsafe.storage.default",
+  "executionSystem":"designsafe.community.data-01",
+  "executionType":"CLI",
+  "templatePath":"wrapper.sh",
+  "testPath":"test/test.sh",
+  "checkpointable":false,
+  "modules":[
+
+  ],
+  "tags":[
+    "demo",
+    "earthquake",
+    "geo",
+    "engineering"
+  ],
+  "ontology":[
+
+  ],
+  "inputs" : [
+  ],
+  "parameters" : [
+    {
+      "id" : "inputFile",
+      "value" : {
+        "validator": "",
+        "visible" : true,
+        "required" : true,
+        "order" : 0,
+        "enquote" : false,
+        "default" : "",
+        "type" : "string"
+      },
+      "details" : {
+        "label" : "File to be extracted.",
+        "description" : "The archive file to be extracted. You can drag and drop file from the left. The archive will be unpacked in it's current directory and must have the proper file extension.",
+        "argument" : null,
+        "showArgument" : false,
+        "repeatArgument" : false
+      },
+      "semantics" : {
+        "minCardinality" : 1,
+        "maxCardinality" : 1,
+        "ontology" : [
+        ]
+      }
+    }
+  ],
+  "outputs" : [ ]
+}

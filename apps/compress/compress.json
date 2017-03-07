@@ -1,0 +1,96 @@
+{
+  "id":"compress",
+  "name":"compress",
+  "parallelism":"SERIAL",
+  "version":"0.1",
+  "label":"Compress folder",
+  "shortDescription":"Compress a folder for download.",
+  "longDescription":"Compress a folder for download.",
+  "defaultMemory":1,
+  "defaultMemoryPerNode":1,
+  "defaultProcessors":1,
+  "defaultQueue":"debug",
+  "defaultMaxRunTime": "02:00:00",
+  "deploymentPath" : "mock/apps/compress",
+  "deploymentSystem" : "designsafe.storage.default",
+  "executionSystem":"designsafe.community.data-01",
+  "executionType":"CLI",
+  "templatePath":"wrapper.sh",
+  "testPath":"test/test.sh",
+  "checkpointable":false,
+  "modules":[
+
+  ],
+  "tags":[
+    "demo",
+    "earthquake",
+    "geo",
+    "engineering"
+  ],
+  "ontology":[
+
+  ],
+  "inputs" : [
+  ],
+  "parameters" : [
+    {
+      "id" : "directory",
+      "value" : {
+        "validator": "",
+        "visible" : true,
+        "required" : true,
+        "order" : 0,
+        "enquote" : false,
+        "default" : "",
+        "type" : "string"
+      },
+      "details" : {
+        "label" : "Directory to be compressed.",
+        "description" : "The directory to be compressed. You can drag and drop file from the left. The archive will be created in its current directory.",
+        "argument" : null,
+        "showArgument" : false,
+        "repeatArgument" : false
+      },
+      "semantics" : {
+        "minCardinality" : 1,
+        "maxCardinality" : 1,
+        "ontology" : [
+        ]
+      }
+    },
+    {
+      "id":"compression_type",
+      "value":{
+        "default":"tgz",
+        "type":"enumeration",
+        "enum_values":[
+          {
+            "tgz":"tar.gz"
+          },
+          {
+            "zip":"zip"
+          }
+        ],
+        "visible":true,
+        "required":true,
+        "enquote":false
+      },
+      "details":{
+        "label":"Compression Type",
+        "description":"Select the type of compressed file, either a Gzipped TAR file (.tar.gz) or a Zip file (.zip).",
+        "argument":null,
+        "showArgument":false,
+        "repeatArgument":false
+      },
+      "semantics":{
+        "ontology":[
+          "xs:enumeration",
+          "xs:string"
+        ],
+        "minCardinality":1,
+        "maxCardinality":1
+      }
+    }
+  ],
+  "outputs" : [ ]
+}

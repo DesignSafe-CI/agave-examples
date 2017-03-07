@@ -1,0 +1,23 @@
+{
+    "name": "test-ls",
+    "appId": "fork-runner-0.1.0",
+    "memoryPerNode": "1GB",
+    "nodeCount": 1,
+    "processorsPerNode": 1,
+    "requestedTime": "00:01:00",
+    "archive": true,
+    "archiveSystem":"designsafe.storage.default",
+    "executionSystem":"designsafe.community.exec-01",
+    "parameters" : {
+      "command":"ls -l $HOME"
+    },
+    "inputs": {
+    },
+    "notifications": [
+      {
+        "url" : "mock@tacc.utexas.edu",
+        "event": "*"
+      }
+    ]
+
+}

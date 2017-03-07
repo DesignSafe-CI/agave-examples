@@ -7,6 +7,7 @@ ${AGAVE_JOB_CALLBACK_RUNNING}
 
 mkdir ./outputs
 /work/00849/tg458981/stampede/DesignSafe/apps/adcirc/51.33/adcirc.bin -I ${inputDirectory} -O ./outputs >> output.eo.txt 2>&1
+rm -rf outputs/PE*
 
 if [ ! $? ]; then
 	echo "ADCIRC exited with an error status. $?" >&2

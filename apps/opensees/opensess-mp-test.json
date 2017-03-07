@@ -1,0 +1,1 @@
+{"appId":"opensees-mp-2.5.0.6480u1","archive":true,"inputs":{"inputDirectory":"agave://designsafe.storage.default/mock/examples/opensees/FreefieldAnalysisEffective"},"parameters":{"inputScript":"freeFieldEffective.tcl"},"requestedTime":"06:00:00","name":"OpenSeesMP-for-Frank"}

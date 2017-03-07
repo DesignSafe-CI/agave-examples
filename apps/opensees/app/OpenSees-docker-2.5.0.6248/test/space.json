@@ -1,0 +1,1 @@
+{"appId":"opensees-docker-2.5.0.6248u1","archive":true,"inputs":{"inputDirectory":"agave://designsafe.storage.default/mock/space%20in%20name"},"parameters":{"inputScript":"1elem.tcl"},"requestedTime":"00:30:00","name":"space_in_name"}

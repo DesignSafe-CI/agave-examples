@@ -71,6 +71,9 @@
             "pisoFoam":"pisoFoam"
           },
           {
+            "interFoam":"interFoam"
+          },
+          {
             "simpleFoam":"simpleFoam"
           }
         ],
