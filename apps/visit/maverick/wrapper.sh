@@ -1,4 +1,4 @@
-# VNC/Paraview wrapper for DesignSafe on Maverick
+# VNC/VisIt wrapper for DesignSafe on Maverick
 
 set -x
 WRAPPERDIR=$( cd "$( dirname "$0" )" && pwd )
@@ -6,8 +6,7 @@ WRAPPERDIR=$( cd "$( dirname "$0" )" && pwd )
 # Load the default TACC modules
 module purge
 module load TACC
-module load qt/4.8.4
-module load paraview
+module load visit
 
 echo job $JOB_ID execution at: `date`
 
@@ -34,6 +33,7 @@ WAYNESS=`echo $PE | perl -pe 's/([0-9]+)way/\1/;'`
 echo "set wayness to $WAYNESS"
 
 # launch VNC session with the session password set to the agave job id
+#VNC_DISPLAY=`$VNCSERVER_BIN -geometry 1280x800 -rfbauth vncp.txt $@ 2>&1 | grep desktop | awk -F: '{print $3}'`
 VNC_DISPLAY=`$VNCSERVER_BIN -geometry ${desktop_resolution} -rfbauth vncp.txt $@ 2>&1 | grep desktop | awk -F: '{print $3}'`
 
 echo "got VNC display :$VNC_DISPLAY"
@@ -115,8 +115,8 @@ cd ${workingDirectory}
 CWD=${workingDirectory}
 
 
-# run an xterm and launch paraview for the user; execution will hold here
-xterm -r -ls -geometry 80x24+10+10 -title '*** Exit this window to kill your VNC server ***' -e 'vglrun paraview'
+# run an xterm and launch VisIt for the user; execution will hold here
+xterm -r -ls -geometry 80x24+10+10 -title '*** Exit this window to kill your VNC server ***' -e 'vglrun visit'
 
 # job is done!
 

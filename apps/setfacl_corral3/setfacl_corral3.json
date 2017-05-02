@@ -1,0 +1,87 @@
+{
+  "id":"setfacl_corral3",
+  "name":"setfacl_corral3",
+  "parallelism":"SERIAL",
+  "version":"0.1",
+  "label":"setfacl on corral3",
+  "shortDescription":"run setfacl on corral3",
+  "longDescription":"run setfacl on corral3",
+  "defaultMemory":1,
+  "defaultMemoryPerNode":1,
+  "defaultProcessors":1,
+  "defaultQueue":"debug",
+  "defaultMaxRunTime": "00:10:00",
+  "deploymentPath" : "mock/apps/setfacl_corral3",
+  "deploymentSystem" : "designsafe.storage.default",
+  "executionSystem":"designsafe.admin.corral3.exec",
+  "executionType":"CLI",
+  "templatePath":"wrapper.sh",
+  "testPath":"test/test.sh",
+  "checkpointable":false,
+  "modules":[
+
+  ],
+  "tags":[
+    "admin",
+    "designsafe",
+    "corral3",
+    "setfacl"
+  ],
+  "ontology":[
+  ],
+  "inputs" : [
+  ],
+  "parameters" : [
+    {
+      "id" : "username",
+      "value" : {
+        "validator": "",
+        "visible" : true,
+        "required" : true,
+        "order" : 0,
+        "enquote" : false,
+        "default" : "",
+        "type" : "string"
+      },
+      "details" : {
+        "label" : "Username",
+        "description" : "Username of user to have ACLs set for",
+        "argument" : null,
+        "showArgument" : false,
+        "repeatArgument" : false
+      },
+      "semantics" : {
+        "minCardinality" : 1,
+        "maxCardinality" : 1,
+        "ontology" : [
+        ]
+      }
+    },
+    {
+      "id" : "directory",
+      "value" : {
+        "validator": "",
+        "visible" : true,
+        "required" : true,
+        "order" : 0,
+        "enquote" : false,
+        "default" : "",
+        "type" : "string"
+      },
+      "details" : {
+        "label" : "Dirctory",
+        "description" : "Relative path from NHERI Corral proejct directory to set. For example to set ACLs on NHERI/shared/mock enter 'shared/mock'.",
+        "argument" : null,
+        "showArgument" : false,
+        "repeatArgument" : false
+      },
+      "semantics" : {
+        "minCardinality" : 1,
+        "maxCardinality" : 1,
+        "ontology" : [
+        ]
+      }
+    }
+  ],
+  "outputs" : [ ]
+}

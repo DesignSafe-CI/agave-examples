@@ -1,11 +1,11 @@
 {
-  "name":"Paraview-Maverick",
+  "name":"VisIt-Maverick",
   "parallelism":"parallel",
-  "version":"4.3.1",
-  "label":"Paraview",
-  "shortDescription":"Run an interactive Paraview session on Maverick.",
-  "longDescription":"Run an interactive Paraview session on Maverick. Be sure to exit the Parview application when you are finished with the session or any files saved will not be archived with the job.",
-  "helpURI":"http://www.paraview.org/paraview-guide/",
+  "version":"2.9.0",
+  "label":"VisIt",
+  "shortDescription":"Run an interactive VisIt session on Maverick.",
+  "longDescription":"Run an interactive VisIt session on Maverick. VisIt is an Open Source, interactive, scalable, visualization, animation and analysis tool. Be sure to exit the VisIt application when you are finished with the session or any files saved will not be archived with the job.",
+  "helpURI":"https://wci.llnl.gov/simulation/computer-codes/visit/",
   "defaultMemory":1,
   "defaultMemoryPerNode":1,
   "defaultNodeCount":1,
@@ -13,21 +13,21 @@
   "defaultProcessorsPerNode":20,
   "defaultQueue":"vis",
   "defaultMaxRunTime": "04:00:00",
-  "deploymentPath":"mock/apps/paraview/maverick",
+  "deploymentPath":"mock/apps/visit/maverick",
   "deploymentSystem":"designsafe.storage.default",
   "executionSystem":"designsafe.community.exec.maverick",
   "executionType":"HPC",
   "templatePath":"wrapper.sh",
   "testPath":"test/test.sh",
   "checkpointable":false,
-  "modules":["purge", "load TACC", "load qt/4.8.4","load paraview"],
+  "modules":["purge", "load TACC", "load visit"],
   "tags":[
     "DesignSafe",
     "hazards",
     "NHERI",
     "VNC",
     "desktop",
-    "Paraview",
+    "VisIt",
     "visualization"
   ],
   "ontology":[
@@ -45,7 +45,7 @@
       },
       "details":{
         "label":"Working Directory",
-        "description":"The directory containing the files that you want to work on. This directory and its files will be copied to where your Paraview session runs. You can drag the link for the directory from the Data Browser on the left, or click the 'Select Input' button and then select the directory.",
+        "description":"The directory containing the files that you want to work on. This directory and its files will be copied to where your VisIt session runs. You can drag the link for the directory from the Data Browser on the left, or click the 'Select Input' button and then select the directory.",
         "argument":null,
         "showArgument":false,
         "repeatArgument":false
@@ -107,7 +107,7 @@
         "minCardinality":1,
         "maxCardinality":1
       }
-    }    
+    }
   ],
   "outputs" : []
 }

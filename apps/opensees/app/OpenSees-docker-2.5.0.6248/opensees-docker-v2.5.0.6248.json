@@ -6,6 +6,7 @@
   "label":"OpenSees-EXPRESS",
   "shortDescription":"OpenSees is a software framework for simulating the seismic response of structural and geotechnical systems.",
   "longDescription":"OpenSees is a software framework for simulating the seismic response of structural and geotechnical systems. The version of OpenSees available here performs analysis using a single tcl script, and runs on a virtual machine instead of an HPC system to avoid queue time. Interactive OpenSees will be available soon. This interpreter is for the analysis of small models by users who have need for quick execution turnaround time.",
+  "helpURI" : "http://opensees.berkeley.edu/",
   "defaultMemory":1,
   "defaultMemoryPerNode":1,
   "defaultProcessors":1,

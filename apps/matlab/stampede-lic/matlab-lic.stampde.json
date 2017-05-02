@@ -61,7 +61,8 @@
       }
     }
   ],
-  "parameters" : [ {
+  "parameters" : [
+    {
     "id" : "_license",
     "value" : {
       "validator": "",
@@ -86,6 +87,52 @@
         "minCardinality": 1,
         "maxCardinality": 1
     }
-  }],
+  },
+  {
+    "id":"desktop_resolution",
+    "value":{
+      "default":"1280x800",
+      "type":"enumeration",
+      "enum_values":[
+        {
+          "800x600":"800x600"
+        },
+        {
+          "1280x800":"1280x800"
+        },
+        {
+          "1920x1080":"1920x1080"
+        },
+        {
+          "1920x1200":"1920x1200"
+        },
+        {
+          "1600x1200":"1600x1200"
+        },
+        {
+          "2560x1600":"2560x1600"
+        }
+      ],
+      "visible":true,
+      "required":true,
+      "enquote":false
+    },
+    "details":{
+      "label":"Desktop Resolution",
+      "description":"Set the desktop screen size for your visualization session.",
+      "argument":null,
+      "showArgument":false,
+      "repeatArgument":false
+    },
+    "semantics":{
+      "ontology":[
+        "xs:enumeration",
+        "xs:string"
+      ],
+      "minCardinality":1,
+      "maxCardinality":1
+    }
+  }
+],
   "outputs" : [ ]
 }

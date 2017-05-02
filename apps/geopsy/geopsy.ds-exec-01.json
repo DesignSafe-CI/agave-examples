@@ -1,18 +1,18 @@
 {
-  "name":"Matlab-ds-exec-01",
+  "name":"GeoPsy-ds-exec-01",
   "parallelism":"SERIAL",
-  "version":"0.1",
-  "label":"MATLAB",
-  "shortDescription":"Run an interactive Matlab 2016a session on a virtual machine.",
-  "longDescription":"Run an interactive Matlab 2016a session on a virtual machine. Work directly on your files rather than needing to copy them to and from Stampede.",
+  "version":"2.10.1",
+  "label":"GeoPsy-Interactive",
+  "shortDescription":"Run an interactive GeoPsy session on a virtual machine.",
+  "longDescription":"Run an interactive GeoPsy session on a virtual machine.",
   "parallelism" : "SERIAL",
   "defaultProcessorsPerNode" : 1,
   "defaultMemoryPerNode" : 1,
   "defaultNodeCount" : 1,
   "defaultMaxRunTime" : "24:00:00",
   "defaultQueue" : null,
-  "helpURI" : "https://www.designsafe-ci.org",
-  "deploymentPath":"mock/apps/matlab/ds-exec-01",
+  "helpURI" : "http://www.geopsy.org/wiki/index.php/Welcome_to_GeopsyWiki",
+  "deploymentPath":"mock/apps/geopsy",
   "deploymentSystem":"designsafe.storage.default",
   "executionType" : "CLI",
   "executionSystem" : "designsafe.community.exec-01",
@@ -27,39 +27,15 @@
     "NHERI",
     "VNC",
     "desktop",
-    "matlab",
+    "geopsy",
+    "geopsy.org",
     "VM"
   ],
   "ontology":[
   ],
   "inputs":[
   ],
-  "parameters" : [ {
-    "id" : "_license",
-    "value" : {
-      "validator": "",
-      "visible" : true,
-      "required" : true,
-      "order" : 0,
-      "enquote" : false,
-      "default" : "",
-      "type" : "string"
-    },
-    "details" : {
-      "label" : "Matlab License File Text",
-      "description" : "The text that should be put in the Matlab license file.",
-      "argument" : null,
-      "showArgument" : false,
-      "repeatArgument" : false
-    },
-    "semantics": {
-        "ontology": [
-          "xs:string"
-        ],
-        "minCardinality": 1,
-        "maxCardinality": 1
-    }
-  },
+  "parameters" : [
   {
     "id":"desktop_resolution",
     "value":{

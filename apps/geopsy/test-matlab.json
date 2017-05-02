@@ -1,0 +1,22 @@
+{
+    "name": "test-geopsy",
+    "appId": "GeoPsy-ds-exec-01-0.1",
+    "memoryPerNode": "1GB",
+    "nodeCount": 1,
+    "processorsPerNode": 1,
+    "requestedTime": "00:30:00",
+    "archive": true,
+    "archiveSystem":"designsafe.storage.default",
+    "executionSystem":"designsafe.community.exec-01",
+    "parameters" : {
+    },
+    "inputs": {
+    },
+    "notifications": [
+      {
+        "url" : "mock@tacc.utexas.edu",
+        "event": "*"
+      }
+    ]
+
+}

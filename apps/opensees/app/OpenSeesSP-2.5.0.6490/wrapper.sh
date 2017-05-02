@@ -3,7 +3,8 @@ set -x
 WRAPPERDIR=$( cd "$( dirname "$0" )" && pwd )
 
 ${AGAVE_JOB_CALLBACK_RUNNING}
-module load petsc/3.6
+module purge
+module load TACC petsc/3.5
 
 OPENSEES_BIN='/work/00849/tg458981/stampede/DesignSafe/apps/opensees/bin/OpenSeesSP-2.5.0.6490'
 

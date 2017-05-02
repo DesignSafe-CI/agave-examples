@@ -1,4 +1,4 @@
-# VNC/Matlab wrapper for DesignSafe on Stampede
+# VNC/GeoPsy wrapper for DesignSafe on a Virtual Machine in a container
 
 set -x
 WRAPPERDIR=$( cd "$( dirname "$0" )" && pwd )
@@ -11,7 +11,6 @@ echo "running on node $NODE_HOSTNAME"
 
 ## Agave job id for vncpassword
 VNCP='${AGAVE_JOB_ID}'
-#VNCPO=`/home/tg458981/bin/vncp $VNCP`
 
 #agave callback to let it know the job is running
 ${AGAVE_JOB_CALLBACK_RUNNING}
@@ -33,13 +32,8 @@ WEBSOCKET_PORT=$port
 LOGIN_VNC_PORT=$port
 
 #notifications sent to designsafe, designsafeci-dev
-### may need to move these calls into the docker container for proper timing
-#curl -k --data "event_type=VNC&host=vis.tacc.utexas.edu&port=$WEBSOCKET_PORT&address=vis.tacc.utexas.edu:$LOGIN_VNC_PORT&password=$VNCP&owner=${AGAVE_JOB_OWNER}" https://designsafeci-dev.tacc.utexas.edu/webhooks/ &
-#curl -k --data "event_type=VNC&host=vis.tacc.utexas.edu&port=$WEBSOCKET_PORT&address=vis.tacc.utexas.edu:$LOGIN_VNC_PORT&password=$VNCP&owner=${AGAVE_JOB_OWNER}" https://www.designsafe-ci.org/webhooks/ &
 curl -k --data "event_type=VNC&host=designsafe-exec-01.tacc.utexas.edu&port=$port&password=$VNCP&address=designsafe-exec-01.tacc.utexas.edu:$port/vnc.html?password=$VNCP&port=$port&owner=${AGAVE_JOB_OWNER}&autoconnect=true" https://designsafeci-dev.tacc.utexas.edu/webhooks/ &
 curl -k --data "event_type=VNC&host=designsafe-exec-01.tacc.utexas.edu&port=$port&password=$VNCP&address=designsafe-exec-01.tacc.utexas.edu:$port/vnc.html?password=$VNCP&port=$port&owner=${AGAVE_JOB_OWNER}&autoconnect=true" https://www.designsafe-ci.org/webhooks/ &
-#curl -k --data "event_type=VNC&host=vis.tacc.utexas.edu&port=$WEBSOCKET_PORT&address=vis.tacc.utexas.edu:$LOGIN_VNC_PORT&password=$VNCP&owner=${AGAVE_JOB_OWNER}" http://requestbin.agaveapi.co/v946vov9 &
-
 
 docker run -i --sig-proxy=true --rm \
   -p $port:6080 \
@@ -47,21 +41,14 @@ docker run -i --sig-proxy=true --rm \
   -v /home/mock/matlab:/matlab \
   -v /corral-repl/tacc/NHERI/public/projects:/home/ubuntu/public/nees:ro \
   --env VNCP="$VNCP" --env DESKTOP_RESOLUTION="${desktop_resolution}" \
-  vnc-matlab
-
-#docker run -i --sig-proxy=true --rm \
-#			-m 1G \
-#			-v "`pwd`/${inputDirectory}":"/data/" \
-#      -v "blahblah ${AGAVE_JOB_OWNER} blah blah": "something ${AGAVE_JOB_OWNER}" \
-#			stevemock/designsafe-opensees-express
-# job is done!
+  vnc-geopsy
 
 echo job execution finished at: `date`
 
 cd ..
 
 if [ ! $? ]; then
-        echo "VNC exited with an error status. $?" >&2
+        echo "GeoPsy exited with an error status. $?" >&2
         ${AGAVE_JOB_CALLBACK_FAILURE}
         exit
 fi

@@ -42,7 +42,7 @@ WAYNESS=`echo $PE | perl -pe 's/([0-9]+)way/\1/;'`
 echo "set wayness to $WAYNESS"
 
 # launch VNC session with the session password set to the agave job id
-VNC_DISPLAY=`$VNCSERVER_BIN -geometry 1280x800 -rfbauth vncp.txt $@ 2>&1 | grep desktop | awk -F: '{print $3}'`
+VNC_DISPLAY=`$VNCSERVER_BIN -geometry ${desktop_resolution} -rfbauth vncp.txt $@ 2>&1 | grep desktop | awk -F: '{print $3}'`
 echo "got VNC display :$VNC_DISPLAY"
 
 # todo: make sure this is a valid display, and that it is 1 or 2, since those are the only displays forwarded
