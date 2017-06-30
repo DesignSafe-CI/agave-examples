@@ -1,0 +1,18 @@
+{
+  "name": "test-->designsafe.community.exec.ls5",
+  "appId": "adcirc-parallel-ls5-51.33",
+  "batchQueue": "normal",
+  "executionSystem": "designsafe.community.exec.ls5",
+  "maxRunTime": "01:00:00",
+  "nodeCount": 10,
+  "processorsPerNode": 240,
+  "archive": true,
+  "archiveSystem":"designsafe.storage.default",
+  "archivePath":"mock/archive/adcirc/${JOB_ID}",
+  "inputs": {
+    "inputDirectory":"agave://designsafe.storage.default/mock/examples/adcirc/EC2001"
+  },
+  "parameters": {
+    "meshFile":"fort.14"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name" : "fork-runner",
+  "name" : "fork-runner-ls5",
   "parallelism" : "SERIAL",
   "defaultProcessorsPerNode" : 1,
   "defaultMemoryPerNode" : 1,
@@ -16,8 +16,8 @@
   ],
   "ontology" : [ ],
   "executionType" : "CLI",
-  "executionSystem" : "designsafe.community.exec-01",
-  "deploymentPath" : "mock/apps/fork-runner/designsafe-exec-01",
+  "executionSystem" : "designsafe.community.exec.ls5",
+  "deploymentPath" : "mock/apps/fork-runner/designsafe-exec-ls5",
   "deploymentSystem" : "designsafe.storage.default",
   "templatePath" : "wrapper.sh",
   "testPath" : "test/test.sh",

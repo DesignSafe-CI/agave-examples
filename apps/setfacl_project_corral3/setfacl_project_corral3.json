@@ -1,0 +1,63 @@
+{
+  "id":"setfacl_project_corral3",
+  "name":"setfacl_project_corral3",
+  "parallelism":"SERIAL",
+  "version":"0.1",
+  "label":"Set ACL on Project",
+  "shortDescription":"Set ACLs on a project",
+  "longDescription":"Set ACLs on a project directory on corral3 to give yourself direct access to a project directory",
+  "defaultMemory":1,
+  "defaultMemoryPerNode":1,
+  "defaultProcessors":1,
+  "defaultQueue":"debug",
+  "defaultMaxRunTime": "00:10:00",
+  "deploymentPath" : "mock/apps/setfacl_project_corral3",
+  "deploymentSystem" : "designsafe.storage.default",
+  "executionSystem":"designsafe.admin.corral3.exec",
+  "executionType":"CLI",
+  "templatePath":"wrapper.sh",
+  "testPath":"test/test.sh",
+  "checkpointable":false,
+  "modules":[
+
+  ],
+  "tags":[
+    "admin",
+    "designsafe",
+    "corral3",
+    "setfacl",
+    "project"
+  ],
+  "ontology":[
+  ],
+  "inputs" : [
+  ],
+  "parameters" : [
+    {
+      "id" : "projectID",
+      "value" : {
+        "validator": "",
+        "visible" : true,
+        "required" : true,
+        "order" : 0,
+        "enquote" : false,
+        "default" : "",
+        "type" : "string"
+      },
+      "details" : {
+        "label" : "projectID",
+        "description" : "Project ID for the project/directory to set the ACLs for. Big long UUID that looks like 7031298110039593446-242ac11e-0001-012. You can find it in the URL when you have navigated to that project in the Data Depot.",
+        "argument" : null,
+        "showArgument" : false,
+        "repeatArgument" : false
+      },
+      "semantics" : {
+        "minCardinality" : 1,
+        "maxCardinality" : 1,
+        "ontology" : [
+        ]
+      }
+    }
+  ],
+  "outputs" : [ ]
+}

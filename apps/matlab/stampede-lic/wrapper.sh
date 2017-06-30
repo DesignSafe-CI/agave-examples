@@ -66,12 +66,43 @@ echo "local (compute node) VNC port is $LOCAL_VNC_PORT"
 STUFF=`/home1/00832/envision/websockify/run --cert=/home1/00832/envision/.viscert/vis.2015.04.pem -D 5902 localhost:$LOCAL_VNC_PORT`
 echo $STUFF
 
-# the largemem queue has traditional numbering, other queues have row-node numbering
-if [ $SLURM_QUEUE == "largemem" ]; then
-   LOGIN_VNC_PORT="$VNC_DISPLAY`echo $NODE_HOSTNAME | perl -ne 'print $1.$2 if /c\d(\d\d)-\d(\d\d)/;'`"
+#
+# hackalicious direct map of rack to port range to support the lingering vestiges of Stampede
+#
+declare -A LOGIN_PORT_MAP_FOUR
+declare -A LOGIN_PORT_MAP_FIVE
+declare LOGIN_VNC_PORT
+LOGIN_PORT_MAP_FOUR=( ["c442"]="580" ["c443"]="581" ["c444"]="582" ["c457"]="583" ["c458"]="584" ["c459"]="585"
+["c460"]="586" ["c461"]="587" ["c462"]="588" ["c463"]="589" ["c464"]="590" ["c465"]="591" ["c478"]="592"
+["c479"]="593" ["c480"]="594" ["c481"]="595" ["c482"]="596" ["c483"]="597" ["c484"]="598" ["c485"]="599"
+["c486"]="600" ["c495"]="601" ["c496"]="602" ["c497"]="603" ["c498"]="604" ["c499"]="605" )
+LOGIN_PORT_MAP_FIVE=( ["c500"]="235" ["c501"]="236" ["c502"]="237" ["c503"]="238" ["c504"]="239" ["c505"]="240"
+["c506"]="241" ["c507"]="242" ["c508"]="243" ["c509"]="244" ["c510"]="245" ["c511"]="246" ["c512"]="247"
+["c513"]="248" ["c514"]="249" ["c515"]="250" ["c516"]="251" ["c517"]="252" ["c518"]="253" ["c519"]="254"
+["c520"]="255" ["c521"]="256" ["c522"]="257" ["c523"]="258" ["c524"]="259" ["c525"]="260" ["c526"]="261"
+["c527"]="262" ["c528"]="263" ["c529"]="264" ["c530"]="265" ["c531"]="266" ["c532"]="267" ["c533"]="268"
+["c534"]="269" ["c535"]="270" ["c536"]="271" ["c537"]="272" ["c538"]="273" ["c539"]="274" ["c540"]="275"
+["c541"]="276" ["c542"]="277" ["c543"]="278" ["c544"]="279" ["c548"]="280" ["c549"]="281" ["c550"]="282"
+["c551"]="283" ["c552"]="284" ["c553"]="285" ["c554"]="286" ["c555"]="287" ["c556"]="288" ["c557"]="289"
+["c558"]="290" ["c559"]="291" ["c560"]="292" )
+RACK_SET=`echo $NODE_HOSTNAME | perl -ne 'print $1 if /c(\d)\d\d-\d\d\d/;'`
+echo "RACK_SET=$RACK_SET"
+RACK=`echo $NODE_HOSTNAME | perl -ne 'print $1 if /(c\d\d\d)-\d\d\d/;'`
+echo "RACK=$RACK"
+
+if [ $RACK_SET -eq "4" ]; then
+    LOGIN_VNC_PORT="${LOGIN_PORT_MAP_FOUR[$RACK]}`echo $NODE_HOSTNAME | perl -ne 'print $1.$2 if /c\d\d\d-(\d)\d(\d)/;'`"
+    LOGIN_VNC_PORT=$(($LOGIN_VNC_PORT + 2600))
+elif [ $RACK_SET -eq "5" ]; then
+    LOGIN_VNC_PORT="${LOGIN_PORT_MAP_FIVE[$RACK]}`echo $NODE_HOSTNAME | perl -ne 'print $1.$2 if /c\d\d\d-(\d)\d(\d)/;'`"
+    LOGIN_VNC_PORT=$(($LOGIN_VNC_PORT + 20000))
 else
-   PORT_OFFSET=$(((`echo $NODE_HOSTNAME | perl -ne 'print $1 if /c(\d)\d\d-\d\d\d/;'` - 4) * 2)) # 0 for c400 racks, 2 for c500 racks
-   LOGIN_VNC_PORT="$(($VNC_DISPLAY + $PORT_OFFSET))`echo $NODE_HOSTNAME | perl -ne 'print $1.$2.$3 if /c\d(\d\d)-(\d)\d(\d)/;'`"
+    echo
+    echo "================================"
+    echo "  unknown RACK_SET $RACK_SET    "
+    echo "================================"
+    echo
+    exit 1
 fi
 
 #LOGIN_VNC_PORT="$VNC_DISPLAY`echo $NODE_HOSTNAME | perl -ne 'print 59$2 if /c\d(\d\d)-\d(\d\d)/;'`"
@@ -133,8 +164,8 @@ VGL_PID=$!
 #echo "$LOGIN_VNC_PORT" > .envision_vnc_port
 #echo "$SLURM_JOB_ID" > .envision_job_id
 
-# stampede specific port offset + 10,000 for websocket port from websockify
-WEBSOCKET_PORT=$(($LOGIN_VNC_PORT + 10000))
+# stampede specific port offset is calculated above dependent on which of the rack sets 4XXX or 5XXX
+WEBSOCKET_PORT=$LOGIN_VNC_PORT
 
 # write job start time and duration (in hours) to file
 #date +%s > .envision_job_start

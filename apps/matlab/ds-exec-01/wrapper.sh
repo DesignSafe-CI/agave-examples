@@ -34,12 +34,8 @@ LOGIN_VNC_PORT=$port
 
 #notifications sent to designsafe, designsafeci-dev
 ### may need to move these calls into the docker container for proper timing
-#curl -k --data "event_type=VNC&host=vis.tacc.utexas.edu&port=$WEBSOCKET_PORT&address=vis.tacc.utexas.edu:$LOGIN_VNC_PORT&password=$VNCP&owner=${AGAVE_JOB_OWNER}" https://designsafeci-dev.tacc.utexas.edu/webhooks/ &
-#curl -k --data "event_type=VNC&host=vis.tacc.utexas.edu&port=$WEBSOCKET_PORT&address=vis.tacc.utexas.edu:$LOGIN_VNC_PORT&password=$VNCP&owner=${AGAVE_JOB_OWNER}" https://www.designsafe-ci.org/webhooks/ &
 curl -k --data "event_type=VNC&host=designsafe-exec-01.tacc.utexas.edu&port=$port&password=$VNCP&address=designsafe-exec-01.tacc.utexas.edu:$port/vnc.html?password=$VNCP&port=$port&owner=${AGAVE_JOB_OWNER}&autoconnect=true" https://designsafeci-dev.tacc.utexas.edu/webhooks/ &
 curl -k --data "event_type=VNC&host=designsafe-exec-01.tacc.utexas.edu&port=$port&password=$VNCP&address=designsafe-exec-01.tacc.utexas.edu:$port/vnc.html?password=$VNCP&port=$port&owner=${AGAVE_JOB_OWNER}&autoconnect=true" https://www.designsafe-ci.org/webhooks/ &
-#curl -k --data "event_type=VNC&host=vis.tacc.utexas.edu&port=$WEBSOCKET_PORT&address=vis.tacc.utexas.edu:$LOGIN_VNC_PORT&password=$VNCP&owner=${AGAVE_JOB_OWNER}" http://requestbin.agaveapi.co/v946vov9 &
-
 
 docker run -i --sig-proxy=true --rm \
   -p $port:6080 \
