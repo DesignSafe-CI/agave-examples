@@ -1,0 +1,86 @@
+{
+  "name":"QGIS-desktop-ds-exec-01",
+  "parallelism":"SERIAL",
+  "version":"2.18.10",
+  "label":"QGIS Desktop",
+  "shortDescription":"Run an interactive QGIS Desktop session on a virtual machine.",
+  "longDescription":"Run an interactive QGIS Desktop session on a virtual machine.",
+  "parallelism" : "SERIAL",
+  "defaultProcessorsPerNode" : 1,
+  "defaultMemoryPerNode" : 1,
+  "defaultNodeCount" : 1,
+  "defaultMaxRunTime" : "24:00:00",
+  "defaultQueue" : null,
+  "helpURI" : "http://www.qgis.org/",
+  "deploymentPath":"mock/apps/qgis-desktop",
+  "deploymentSystem":"designsafe.storage.default",
+  "executionType" : "CLI",
+  "executionSystem" : "designsafe.community.exec-01",
+  "templatePath" : "wrapper.sh",
+  "testPath" : "test/test.sh",
+  "checkpointable" : false,
+  "modules" : [ ],
+  "inputs" : [ ],
+  "tags":[
+    "DesignSafe",
+    "hazards",
+    "NHERI",
+    "VNC",
+    "desktop",
+    "qgis",
+    "qgis-desktop",
+    "qgis.org",
+    "VM"
+  ],
+  "ontology":[
+  ],
+  "inputs":[
+  ],
+  "parameters" : [
+  {
+    "id":"desktop_resolution",
+    "value":{
+      "default":"1280x800",
+      "type":"enumeration",
+      "enum_values":[
+        {
+          "800x600":"800x600"
+        },
+        {
+          "1280x800":"1280x800"
+        },
+        {
+          "1920x1080":"1920x1080"
+        },
+        {
+          "1920x1200":"1920x1200"
+        },
+        {
+          "1600x1200":"1600x1200"
+        },
+        {
+          "2560x1600":"2560x1600"
+        }
+      ],
+      "visible":true,
+      "required":true,
+      "enquote":false
+    },
+    "details":{
+      "label":"Desktop Resolution",
+      "description":"Set the desktop screen size for your QGIS Desktop session.",
+      "argument":null,
+      "showArgument":false,
+      "repeatArgument":false
+    },
+    "semantics":{
+      "ontology":[
+        "xs:enumeration",
+        "xs:string"
+      ],
+      "minCardinality":1,
+      "maxCardinality":1
+    }
+  }],
+  "outputs" : [ ]
+}
