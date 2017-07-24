@@ -1,0 +1,104 @@
+{
+  "id":"adcirc-parallel-1920",
+  "name":"adcirc-parallel-1920",
+  "parallelism":"parallel",
+  "version":"51.33",
+  "label": "Parallel ADCIRC 1920",
+  "defaultProcessorsPerNode": 1920,
+  "shortDescription":"Parallel ADCIRC is a computer program for solving systems of shallow water equations with applications to hurricane storm surge modeling.",
+  "longDescription":"Parallel ADCIRC is a computer program for solving systems of shallow water equations with applications to hurricane storm surge modeling. Documentation can be found at www.adcirc.org. Simulations are run on Stampede using 120 nodes.",
+  "helpURI":"http://adcirc.org/",
+  "defaultMemory":1,
+  "defaultMemoryPerNode":1,
+  "defaultNodeCount":10,
+  "defaultProcessors":1920,
+  "defaultNodeCount": 120,
+  "label": "Parallel ADCIRC 1920",
+  "defaultProcessorsPerNode": 1920,
+  "defaultQueue":"normal",
+  "defaultMaxRunTime": "48:00:00",
+  "deploymentPath":"mock/apps/adcirc/51.33-parallel",
+  "deploymentSystem":"designsafe.storage.default",
+  "executionSystem":"designsafe.community.exec.stampede.nores",
+  "executionType":"HPC",
+  "templatePath":"wrapper.sh",
+  "testPath":"test/test.sh",
+  "checkpointable":false,
+  "modules":[],
+  "tags":[
+    "DesignSafe",
+    "hazards",
+    "NHERI",
+    "circulation",
+    "storm surge",
+    "larval transport",
+    "free surface circulation",
+    "transport problems",
+    "finite element",
+    "engineering"
+  ],
+  "ontology":[
+
+  ],
+  "inputs":[
+    {
+      "id":"inputDirectory",
+      "value":{
+        "default":"agave://designsafe.storage.default/mock/examples/adcirc/EC2001",
+        "type":"string",
+        "validator":"",
+        "visible":true,
+        "required":true,
+        "enquote":false
+      },
+      "details":{
+        "label":"Input Directory",
+        "description":"The directory containing your ADCIRC input files. You can drag the link for the directory from the Data Browser on the left, or click the 'Select Input' button and then select the directory. To try this out with example data, copy and paste 'agave://designsafe.storage.default/mock/examples/adcirc/EC2001' above.",
+        "argument":null,
+        "showArgument":false,
+        "repeatArgument":false
+      },
+      "semantics":{
+        "ontology":[
+          "xsd:string"
+        ],
+        "minCardinality":1,
+        "maxCardinality":1,
+        "fileTypes":[
+          "raw-0"
+        ]
+      }
+    }
+  ],
+  "parameters":[
+    {
+      "id" : "meshFile",
+      "value" : {
+        "validator": "",
+        "visible" : true,
+        "required" : true,
+        "order" : 0,
+        "enquote" : false,
+        "default" : "fort.14",
+        "type" : "string"
+      },
+      "details" : {
+        "label" : "Mesh File",
+        "description" : "Select your mesh file. This is usually your fort.14 file. This file should reside in the Input Directory specified above.",
+        "argument" : null,
+        "showArgument" : false,
+        "repeatArgument" : false
+      },
+      "semantics" : {
+        "minCardinality" : 1,
+        "maxCardinality" : 1,
+        "ontology" : [
+          "xsd:string"
+        ],
+        "fileTypes" : [
+          "raw-0"
+        ]
+      }
+    }
+  ]
+}
