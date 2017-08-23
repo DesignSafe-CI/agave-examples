@@ -5,7 +5,7 @@
   "version":"51.33",
   "label":"Parallel SWAN+ADCIRC 160 cores",
   "shortDescription":"Parallel SWAN+ADCIRC is a computer program for solving systems of shallow water equations with applications to hurricane storm surge modeling.",
-  "longDescription":"Parallel SWAN+ADCIRC is a computer program for solving systems of shallow water equations with applications to hurricane storm surge modeling. Documentation can be found at http://adcirc.org/ and https://ccht.ccee.ncsu.edu/swanadcirc/. Simulations are run on Stampede using 1190 cores/processors.",
+  "longDescription":"Parallel SWAN+ADCIRC is a computer program for solving systems of shallow water equations with applications to hurricane storm surge modeling. Documentation can be found at http://adcirc.org/ and https://ccht.ccee.ncsu.edu/swanadcirc/. Simulations are run on Stampede using 160 cores/processors.",
   "helpURI":"https://ccht.ccee.ncsu.edu/swanadcirc/",
   "defaultMemory":1,
   "defaultMemoryPerNode":1,

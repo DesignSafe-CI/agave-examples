@@ -2,7 +2,8 @@ set -x
 WRAPPERDIR=$( cd "$( dirname "$0" )" && pwd )
 
 # Run the script with the runtime values passed in from the job request
-
+STARTTIME=`date`
+echo "starting at $STARTTIME"
 ${AGAVE_JOB_CALLBACK_RUNNING}
 
 cd ${inputDirectory}
@@ -30,11 +31,13 @@ mkdir ./outputs
 
 # run the things
 ibrun /work/00849/tg458981/stampede/DesignSafe/apps/adcirc/51.33/padcirc -I . -O ./outputs >> output.eo.txt 2>&1
-mv PE0000/fort.67 outputs/PE0000_fort.67
-mv PE0000/fort.68 outputs/PE0000_fort.68
+mv outputs/PE0000/fort.67 .
+mv outputs/PE0000/fort.68 .
 rm -rf outputs/PE*
 cd ..
 
+ENDTIME=`date`
+echo "ending at $ENDTIME"
 if [ ! $? ]; then
 	echo "ADCIRC exited with an error status. $?" >&2
 	${AGAVE_JOB_CALLBACK_FAILURE}

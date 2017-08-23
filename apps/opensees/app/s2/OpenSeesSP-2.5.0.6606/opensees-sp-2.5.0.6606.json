@@ -1,0 +1,96 @@
+{
+    "id" : "opensees-sp-v2.5.0.6606",
+    "name" : "opensees-sp",
+    "parallelism" : "serial",
+    "defaultProcessors":68,
+    "defaultProcessorsPerNode":68,
+    "defaultMemoryPerNode" : 1,
+    "defaultNodeCount" : 1,
+    "defaultMaxRunTime" : "01:00:00",
+    "defaultQueue" : "normal",
+    "version" : "2.5.0.6606",
+    "helpURI" : "http://opensees.berkeley.edu/",
+    "label" : "OpenSeesSP (Stampede2)",
+    "shortDescription" : "OpenSees is a software framework for simulating the seismic response of structural and geotechnical systems.",
+    "longDescription" : "OpenSees is a software framework for simulating the seismic response of structural and geotechnical systems.  The version of OpenSees available here performs analysis using a single tcl script, and runs on an HPC system. Interactive OpenSees as well as parallel processing capabilities through OpenSeesSP and OpenSeesMP will be available soon. This interpreter is for the analysis of very large models by users who have little understanding of parallel computing and who have an input file that is too large or takes too long to run on a sequential machine (single processor). This interpreter will process the same script that the OpenSees interpreter running on a sequential machine will process. There are no special commands for parallel processing, though there are additional options when it comes to choosing solvers. It will be referred to as the 'Single Parallel Interpreter' application. This runs on 1 node (68 cores) on Stampede2.",
+    "tags" : [
+      "demo",
+      "earthquake",
+      "geo",
+      "engineering"
+    ],
+    "ontology" : [ ],
+    "executionType" : "HPC",
+    "executionSystem" : "designsafe.community.exec.stampede2.nores",
+    "deploymentPath" : "mock/apps/opensees/s2/OpenSeesSP-2.5.0.6606",
+    "deploymentSystem" : "designsafe.storage.default",
+    "templatePath" : "wrapper.sh",
+    "testPath" : "test/test.sh",
+    "checkpointable" : false,
+    "modules" : [
+      "load petsc"
+    ],
+    "available" : true,
+    "inputs" : [
+    {
+      "id":"inputDirectory",
+      "value":{
+        "default":"agave://designsafe.storage.default/mock/FreefieldAnalysis-Effective",
+        "type":"string",
+        "validator":"",
+        "visible":true,
+        "required":true,
+        "enquote":false
+      },
+      "details":{
+        "label":"Input Directory",
+        "description":"The directory containing your OpenSees input files as well as your OpenSees TCL script. You can drag the link for the directory from the Data Browser on the left, or click the 'Select Input' button and then select the directory. To try out sample data copy and paste 'agave://designsafe.storage.default/mock/examples/opensees/FreefieldAnalysisEffective' above.",
+        "argument":null,
+        "showArgument":false,
+        "repeatArgument":false
+      },
+      "semantics":{
+        "ontology":[
+          "xsd:string"
+        ],
+        "minCardinality":1,
+        "maxCardinality":1,
+        "fileTypes":[
+          "raw-0"
+        ]
+      }
+    }
+    ],
+    "parameters" : [
+      {
+        "id" : "inputScript",
+        "value" : {
+          "validator": "([^\\s]+(\\.(?i)(tcl))$)",
+          "visible" : true,
+          "required" : true,
+          "order" : 0,
+          "enquote" : false,
+          "default" : "freeFieldEffective.tcl",
+          "type" : "string"
+        },
+        "details" : {
+          "label" : "TCL Script",
+          "description" : "The filename only of the OpenSees TCL script to execute. This file should reside in the Input Directory specified. To try this out copy and paste in 'freeFieldEffective.tcl'.",
+          "argument" : null,
+          "showArgument" : false,
+          "repeatArgument" : false
+        },
+        "semantics" : {
+          "minCardinality" : 1,
+          "maxCardinality" : 1,
+          "ontology" : [
+            "http://sswapmeet.sswap.info/mime/text/Tcl"
+          ],
+          "fileTypes" : [
+            "tcl-0"
+          ]
+        }
+      }
+    ],
+    "outputs" : [ ]
+}

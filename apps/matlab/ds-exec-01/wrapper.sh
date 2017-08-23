@@ -1,4 +1,4 @@
-# VNC/Matlab wrapper for DesignSafe on Stampede
+# VNC/Matlab wrapper for DesignSafe on designsafe-exec-01
 
 set -x
 WRAPPERDIR=$( cd "$( dirname "$0" )" && pwd )
@@ -43,6 +43,7 @@ docker run -i --sig-proxy=true --rm \
   -v /home/mock/matlab:/matlab \
   -v /corral-repl/tacc/NHERI/public/projects:/home/ubuntu/public/nees:ro \
   --env VNCP="$VNCP" --env DESKTOP_RESOLUTION="${desktop_resolution}" \
+  --name=vnc-matlab_${AGAVE_JOB_OWNER}_$port \
   vnc-matlab
 
 #docker run -i --sig-proxy=true --rm \

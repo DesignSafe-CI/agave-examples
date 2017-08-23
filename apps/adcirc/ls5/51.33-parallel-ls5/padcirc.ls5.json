@@ -3,7 +3,7 @@
   "name":"adcirc-parallel-ls5",
   "parallelism":"PARALLEL",
   "version":"51.33",
-  "label":"Parallel ADCIRC Lonestar5",
+  "label":"Parallel ADCIRC (Lonestar5)",
   "shortDescription":"ADCIRC is a computer program for solving systems of shallow water equations with applications to hurricane storm surge modeling",
   "longDescription":"Parallel ADCIRC is a computer program for solving systems of shallow water equations with applications to hurricane storm surge modeling. Documentation can be found at www.adcirc.org. Simulations are run on TACC's Lonstar 5 using 10 nodes/240 cores.",
   "helpURI":"http://adcirc.org/",

@@ -23,16 +23,17 @@ $CORES
 EOT
 
 # decompose the things
-/work/00849/tg458981/lonestar/DesignSafe/apps/adcirc/51.33/adcswprep < in.prep1
-/work/00849/tg458981/lonestar/DesignSafe/apps/adcirc/51.33/adcswprep < in.prep2
+/work/00849/tg458981/lonestar/DesignSafe/apps/adcirc/51.33/adcprep < in.prep1
+/work/00849/tg458981/lonestar/DesignSafe/apps/adcirc/51.33/adcprep < in.prep2
 
 mkdir ./outputs
 
 # run the things
-ibrun /work/00849/tg458981/lonestar/DesignSafe/apps/adcirc/51.33/padcswan -W 6 -I . -O ./outputs >> output.eo.txt 2>&1
-mv PE0000/fort.67 outputs/PE0000_fort.67
-mv PE0000/fort.68 outputs/PE0000_fort.68
-rm -rf outputs/PE*
+#ibrun /work/00849/tg458981/lonestar/DesignSafe/apps/adcirc/51.33/padcswan -W 6 -I . -O ./outputs >> output.eo.txt 2>&1
+ibrun /work/00849/tg458981/lonestar/DesignSafe/apps/adcirc/51.33/padcswan -W 6 -I . >> output.eo.txt 2>&1
+cp PE0000/fort.67 .
+cp PE0000/fort.68 .
+#rm -rf outputs/PE*
 cd ..
 
 if [ ! $? ]; then

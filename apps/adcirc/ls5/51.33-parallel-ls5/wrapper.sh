@@ -29,10 +29,11 @@ EOT
 mkdir ./outputs
 
 # run the things
-ibrun /work/00849/tg458981/lonestar/DesignSafe/apps/adcirc/51.33/padcirc -I . -O ./outputs >> output.eo.txt 2>&1
-mv PE0000/fort.67 outputs/PE0000_fort.67
-mv PE0000/fort.68 outputs/PE0000_fort.68
-rm -rf outputs/PE*
+ibrun /work/00849/tg458981/lonestar/DesignSafe/apps/adcirc/51.33/padcirc -I . >> output.eo.txt 2>&1
+#ibrun /work/00849/tg458981/lonestar/DesignSafe/apps/adcirc/51.33/padcirc -I . -O ./outputs >> output.eo.txt 2>&1
+cp outputs/PE0000/fort.67 .
+cp outputs/PE0000/fort.68 .
+#rm -rf outputs/PE*
 cd ..
 
 if [ ! $? ]; then

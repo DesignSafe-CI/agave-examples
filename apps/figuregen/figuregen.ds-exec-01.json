@@ -20,7 +20,6 @@
   "testPath" : "test/test.sh",
   "checkpointable" : false,
   "modules" : [ ],
-  "inputs" : [ ],
   "tags":[
     "DesignSafe",
     "hazards",

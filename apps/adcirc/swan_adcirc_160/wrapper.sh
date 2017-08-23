@@ -30,8 +30,8 @@ mkdir ./outputs
 
 # run the things
 ibrun /work/00849/tg458981/stampede/DesignSafe/apps/swan_adcirc/padcswan -W 6 -I . -O ./outputs >> output.eo.txt 2>&1
-mv PE0000/fort.67 outputs/PE0000_fort.67
-mv PE0000/fort.68 outputs/PE0000_fort.68
+mv outputs/PE0000/fort.67 .
+mv outputs/PE0000/fort.68 .
 rm -rf outputs/PE*
 cd ..
 
