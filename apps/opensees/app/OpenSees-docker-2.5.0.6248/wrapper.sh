@@ -14,7 +14,7 @@ TCLSCRIPT="${INPUTSCRIPT##*/}"
 echo "TCLSCRIPT is $TCLSCRIPT"
 
 docker run -i --sig-proxy=true --rm \
-			-m 1G --name "opensees-${AGAVE_JOB_OWNER}"\
+			-m 1G --name "opensees_${AGAVE_JOB_OWNER}_${AGAVE_JOB_ID}"\
 			-v "`pwd`/${inputDirectory}":"/data/" \
 			stevemock/designsafe-opensees-express /bin/sh -c "cd /data ; OpenSees < /data/$TCLSCRIPT"
 
